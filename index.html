@@ -13,6 +13,13 @@
 </head>
 <body>
 
+  <div class="gov-strip">
+    <div class="container">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+      <span>Unabhängiger Passbild-Generator – umgesetzt nach ICAO&nbsp;9303 und der Foto-Mustertafel des Bundesministeriums des Innern. Kein amtliches Angebot.</span>
+    </div>
+  </div>
+
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand">
@@ -24,9 +31,9 @@
       <nav class="header-nav">
         <a href="#anforderungen">Anforderungen</a>
         <a href="#faq">FAQ</a>
-        <span class="badge-privacy" title="Ihre Fotos verlassen niemals Ihr Gerät – die gesamte Verarbeitung läuft lokal im Browser.">
+        <span class="badge-privacy" title="Ihre Fotos verlassen niemals Ihr Gerät – die gesamte Bildverarbeitung läuft lokal im Browser.">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          100 % lokal
+          Keine Foto-Uploads
         </span>
       </nav>
     </div>
@@ -48,8 +55,26 @@
             <li><strong>Automatischer Zuschnitt</strong> – Kopfhöhe 70–80&nbsp;%, Augenzone &amp; Zentrierung</li>
             <li><strong>Live-Prüfung</strong> von 8 biometrischen Kriterien</li>
             <li><strong>KI-Hintergrund</strong> – neutral hellgrau, weiß oder hellblau</li>
-            <li><strong>Datenschutz</strong> – alles läuft lokal in Ihrem Browser, kein Upload auf Server</li>
+            <li><strong>Datenschutz</strong> – Ihre Fotos werden lokal im Browser verarbeitet und nicht hochgeladen</li>
           </ul>
+          <div class="trust-badges" aria-label="Qualitätsmerkmale">
+            <span class="tbadge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+              <span class="tb-txt"><span class="tb-title">ICAO 9303</span><span class="tb-sub">Internationaler Standard umgesetzt</span></span>
+            </span>
+            <span class="tbadge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg>
+              <span class="tb-txt"><span class="tb-title">Foto-Mustertafel BMI</span><span class="tb-sub">Maßvorgaben 35 × 45 mm</span></span>
+            </span>
+            <span class="tbadge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              <span class="tb-txt"><span class="tb-title">Lokale Verarbeitung</span><span class="tb-sub">Fotos bleiben auf Ihrem Gerät</span></span>
+            </span>
+            <span class="tbadge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+              <span class="tb-txt"><span class="tb-title">600 dpi</span><span class="tb-sub">Druckqualität mit Maßhaltigkeit</span></span>
+            </span>
+          </div>
         </div>
 
         <div class="upload-card" id="dropzone" tabindex="0" role="button" aria-label="Foto hochladen">
@@ -136,7 +161,7 @@
               <button class="bg-chip" type="button" data-bg="#ffffff" title="Weiß (z. B. US-Visum)"><span class="bg-dot" style="background:#ffffff"></span>Weiß</button>
               <button class="bg-chip" type="button" data-bg="#dbe9f4" title="Hellblau"><span class="bg-dot" style="background:#dbe9f4"></span>Hellblau</button>
             </div>
-            <p class="panel-hint" id="bg-hint">Entfernt den Hintergrund per KI direkt im Browser und ersetzt ihn durch eine amtlich zulässige, einfarbig helle Fläche. Erster Start lädt das KI-Modell (~5&nbsp;MB).</p>
+            <p class="panel-hint" id="bg-hint">Entfernt den Hintergrund per KI direkt im Browser und ersetzt ihn durch eine amtlich zulässige, einfarbig helle Fläche. Beim ersten Einsatz wird einmalig das KI-Modell heruntergeladen (mehrere MB) – Ihr Foto bleibt dabei auf Ihrem Gerät.</p>
             <div class="bg-progress" id="bg-progress" hidden><div class="spinner spinner-sm"></div><span>KI-Modell arbeitet …</span></div>
           </div>
 
@@ -185,17 +210,17 @@
     <div class="container">
       <div class="section-head">
         <h2>Amtliche Anforderungen im Überblick</h2>
-        <p>Diese Kriterien prüft das Tool automatisch (blau) – die übrigen Punkte stellen Sie bitte bereits bei der Aufnahme sicher.</p>
+        <p>Kriterien mit der Kennzeichnung „Auto" prüft das Tool automatisch – die übrigen Punkte stellen Sie bitte bereits bei der Aufnahme sicher.</p>
       </div>
       <div class="req-grid">
-        <div class="req-card req-auto"><h4>📐 Format 35 × 45 mm</h4><p>Hochformat ohne Rand. Digital mind. 413×531 px (300 dpi), empfohlen 827×1063 px (600 dpi).</p></div>
-        <div class="req-card req-auto"><h4>👤 Kopfhöhe 70–80 %</h4><p>Gesichtshöhe von Kinn bis Scheitel: 32–36 mm, also 70–80 % der Bildhöhe.</p></div>
-        <div class="req-card req-auto"><h4>👁️ Augenlinie in der Zone</h4><p>Die Augen müssen im mittleren oberen Bereich des Bildes liegen und klar erkennbar sein.</p></div>
-        <div class="req-card req-auto"><h4>🎯 Zentriert &amp; gerade</h4><p>Gesicht horizontal mittig, Kopf nicht geneigt oder gedreht (Frontalaufnahme).</p></div>
-        <div class="req-card req-auto"><h4>🖼️ Heller Hintergrund</h4><p>Einfarbig hell (ideal hellgrau), kontrastreich zum Gesicht, ohne Muster und Schatten.</p></div>
-        <div class="req-card"><h4>😐 Neutraler Ausdruck</h4><p>Mund geschlossen, nicht lächeln, direkt in die Kamera blicken.</p></div>
-        <div class="req-card"><h4>💡 Gleichmäßiges Licht</h4><p>Keine Schatten im Gesicht oder auf dem Hintergrund, keine Reflexionen, keine roten Augen.</p></div>
-        <div class="req-card"><h4>👓 Brille &amp; Kopfbedeckung</h4><p>Augen nicht verdeckt, keine Spiegelungen auf Gläsern, Kopfbedeckung nur aus religiösen/medizinischen Gründen.</p></div>
+        <div class="req-card req-auto"><h4><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="12" height="18" rx="1.5"/><line x1="6" y1="8" x2="9" y2="8"/><line x1="6" y1="12" x2="9" y2="12"/><line x1="6" y1="16" x2="9" y2="16"/></svg>Format 35 × 45 mm<span class="req-tag">Auto</span></h4><p>Hochformat ohne Rand. Digital mind. 413×531 px (300 dpi), empfohlen 827×1063 px (600 dpi).</p></div>
+        <div class="req-card req-auto"><h4><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4.5"/><path d="M4 21c0-4.5 3.5-7 8-7s8 2.5 8 7"/></svg>Kopfhöhe 70–80 %<span class="req-tag">Auto</span></h4><p>Gesichtshöhe von Kinn bis Scheitel: 32–36 mm, also 70–80 % der Bildhöhe.</p></div>
+        <div class="req-card req-auto"><h4><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>Augenlinie in der Zone<span class="req-tag">Auto</span></h4><p>Die Augen müssen im mittleren oberen Bereich des Bildes liegen und klar erkennbar sein.</p></div>
+        <div class="req-card req-auto"><h4><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5"/><line x1="12" y1="1.5" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22.5" y2="12"/></svg>Zentriert &amp; gerade<span class="req-tag">Auto</span></h4><p>Gesicht horizontal mittig, Kopf nicht geneigt oder gedreht (Frontalaufnahme).</p></div>
+        <div class="req-card req-auto"><h4><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>Heller Hintergrund<span class="req-tag">Auto</span></h4><p>Einfarbig hell (ideal hellgrau), kontrastreich zum Gesicht, ohne Muster und Schatten.</p></div>
+        <div class="req-card"><h4><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="8" y1="15" x2="16" y2="15"/><line x1="9" y1="9.5" x2="9.01" y2="9.5"/><line x1="15" y1="9.5" x2="15.01" y2="9.5"/></svg>Neutraler Ausdruck</h4><p>Mund geschlossen, nicht lächeln, direkt in die Kamera blicken.</p></div>
+        <div class="req-card"><h4><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><line x1="12" y1="2" x2="12" y2="4.5"/><line x1="12" y1="19.5" x2="12" y2="22"/><line x1="4.9" y1="4.9" x2="6.7" y2="6.7"/><line x1="17.3" y1="17.3" x2="19.1" y2="19.1"/><line x1="2" y1="12" x2="4.5" y2="12"/><line x1="19.5" y1="12" x2="22" y2="12"/><line x1="4.9" y1="19.1" x2="6.7" y2="17.3"/><line x1="17.3" y1="6.7" x2="19.1" y2="4.9"/></svg>Gleichmäßiges Licht</h4><p>Keine Schatten im Gesicht oder auf dem Hintergrund, keine Reflexionen, keine roten Augen.</p></div>
+        <div class="req-card"><h4><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.5" cy="14" r="3.5"/><circle cx="17.5" cy="14" r="3.5"/><path d="M10 14h4"/><path d="M3 14l1.5-6h2M21 14l-1.5-6h-2"/></svg>Brille &amp; Kopfbedeckung</h4><p>Augen nicht verdeckt, keine Spiegelungen auf Gläsern, Kopfbedeckung nur aus religiösen/medizinischen Gründen.</p></div>
       </div>
       <div class="notice">
         <strong>Hinweis für deutsche Pässe &amp; Personalausweise:</strong> Seit Mai 2025 akzeptieren deutsche Behörden nur noch digital übermittelte Fotos von zertifizierten Anbietern (Fotofachgeschäft oder Behörden-Terminal). Die hier erstellten Bilder eignen sich hervorragend zur Vorbereitung sowie für Führerschein, Bewerbungen, Visa und Ausweisdokumente vieler anderer Länder – bitte prüfen Sie die Vorgaben der jeweiligen Behörde.
@@ -207,7 +232,7 @@
   <section class="faq-section" id="faq">
     <div class="container">
       <div class="section-head"><h2>Häufige Fragen</h2></div>
-      <details><summary>Werden meine Fotos hochgeladen?</summary><p>Nein. Gesichtserkennung, Zuschnitt und Hintergrundentfernung laufen vollständig lokal in Ihrem Browser (WebAssembly). Ihr Foto verlässt Ihr Gerät zu keinem Zeitpunkt.</p></details>
+      <details><summary>Werden meine Fotos hochgeladen?</summary><p>Nein. Gesichtserkennung, Zuschnitt und Hintergrundentfernung laufen vollständig lokal in Ihrem Browser (WebAssembly). Ihr Foto verlässt Ihr Gerät zu keinem Zeitpunkt. Zur Transparenz: Die optionale KI-Hintergrundentfernung lädt beim ersten Einsatz einmalig das KI-Modell (Programmdaten, mehrere MB) von einem Content-Delivery-Netzwerk herunter – dabei werden nur Programmdateien empfangen, niemals Ihre Bilder versendet.</p></details>
       <details><summary>Welche Fotoqualität brauche ich?</summary><p>Das Ausgangsfoto sollte scharf und gut belichtet sein. Für 600 dpi Druckqualität sollte der Gesichtsausschnitt mindestens ca. 830×1060 Pixel groß sein – moderne Smartphone-Fotos erfüllen das problemlos. Halten Sie bei der Aufnahme etwas Abstand (1,5–2 m) und lassen Sie Platz um den Kopf.</p></details>
       <details><summary>Wie fotografiere ich am besten?</summary><p>Tageslicht von vorn (z. B. vor einem Fenster stehend), einfarbige helle Wand mit ca. 1 m Abstand dahinter (vermeidet Schatten), Kamera auf Augenhöhe, neutraler Blick, Mund geschlossen.</p></details>
       <details><summary>Kann ich die Bilder für den deutschen Reisepass verwenden?</summary><p>Deutsche Pass- und Ausweisbehörden verlangen seit Mai 2025 digital übermittelte Fotos zertifizierter Anbieter. Für Führerschein, viele Visa-Anträge und Dokumente anderer Länder sind selbst erstellte biometrische Fotos weiterhin zulässig.</p></details>
@@ -217,7 +242,7 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>PassBildPro · Verarbeitung zu 100 % lokal im Browser · Keine Cookies, kein Tracking.</p>
+      <p>PassBildPro · Fotos werden ausschließlich lokal im Browser verarbeitet · Keine Cookies, kein Tracking.</p>
       <p class="footer-small">Ohne Gewähr: Bitte prüfen Sie stets die aktuellen Vorgaben der zuständigen Behörde. Grundlage: Foto-Mustertafel des BMI / ICAO 9303.</p>
     </div>
   </footer>

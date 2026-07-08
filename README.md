@@ -6,13 +6,13 @@ Foto hochladen → KI richtet es biometrisch aus → Vorgaben werden live geprü
 
 ## Features
 
-- 🎯 **Automatischer biometrischer Zuschnitt** – Kopfhöhe 70–80 %, Augenzone, Zentrierung, Auto-Begradigung der Augenlinie
-- ✅ **8 Live-Prüfungen** – Kopfhöhe, Augenlinie, Zentrierung, Kopfneigung, Auflösung/dpi, Belichtung, Hintergrund-Helligkeit & -Gleichmäßigkeit
-- 🖼️ **KI-Hintergrund** – Hintergrund entfernen und durch amtlich zulässiges Hellgrau, Weiß oder Hellblau ersetzen
-- 🌍 **Länderformate** – Deutschland/EU (35×45 mm), Führerschein, Schengen-Visum, USA (2×2 in), UK
-- 📷 **Kamera-Aufnahme** direkt im Browser mit Positionierungshilfe
-- 🖨️ **Export** – Einzelbild als JPG mit eingebetteter 600-dpi-Angabe (827×1063 px bei 35×45 mm) sowie Druckbogen 10×15 cm mit mehreren Bildern und Schnittmarken
-- 🔒 **Datenschutz** – Fotos verlassen das Gerät nie; keine Cookies, kein Tracking
+- **Automatischer biometrischer Zuschnitt** – Kopfhöhe 70–80 %, Augenzone, Zentrierung, Auto-Begradigung der Augenlinie
+- **8 Live-Prüfungen** – Kopfhöhe, Augenlinie, Zentrierung, Kopfneigung, Auflösung/dpi, Belichtung, Hintergrund-Helligkeit & -Gleichmäßigkeit
+- **KI-Hintergrund** – Hintergrund entfernen und durch amtlich zulässiges Hellgrau, Weiß oder Hellblau ersetzen (Modell wird beim ersten Einsatz einmalig von einem CDN geladen; das Foto bleibt lokal)
+- **Länderformate** – Deutschland/EU (35×45 mm), Führerschein, Schengen-Visum, USA (2×2 in), UK
+- **Kamera-Aufnahme** direkt im Browser mit Positionierungshilfe
+- **Export** – Einzelbild als JPG mit eingebetteter 600-dpi-Angabe (827×1063 px bei 35×45 mm) sowie Druckbogen 10×15 cm mit mehreren Bildern und Schnittmarken
+- **Datenschutz** – Fotos verlassen das Gerät nie; keine Cookies, kein Tracking
 
 ## Umgesetzte amtliche Vorgaben (Foto-Mustertafel BMI / ICAO 9303)
 

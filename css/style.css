@@ -1,17 +1,17 @@
 /* ============ PassBildPro – Design System ============ */
 :root {
-  --c-primary: #3b5bdb;
-  --c-primary-dark: #2f4bc0;
-  --c-primary-light: #eef2ff;
-  --c-accent: #12b886;
-  --c-danger: #e03131;
-  --c-warn: #f08c00;
-  --c-ink: #17233b;
-  --c-ink-soft: #4a5670;
+  --c-primary: #17549c;
+  --c-primary-dark: #113e74;
+  --c-primary-light: #e9f0f9;
+  --c-accent: #2b8a3e;
+  --c-danger: #c92a2a;
+  --c-warn: #e8590c;
+  --c-ink: #1b2433;
+  --c-ink-soft: #46536b;
   --c-muted: #8b94a8;
-  --c-bg: #f6f8fc;
+  --c-bg: #f5f7fa;
   --c-card: #ffffff;
-  --c-border: #e4e8f1;
+  --c-border: #e2e7ee;
   --radius: 16px;
   --radius-sm: 10px;
   --shadow-sm: 0 1px 3px rgba(23, 35, 59, 0.07);
@@ -34,6 +34,16 @@ body {
 h1, h2, h3, h4 { line-height: 1.2; letter-spacing: -0.015em; }
 button { font-family: inherit; cursor: pointer; }
 
+/* ============ Info-Leiste ============ */
+.gov-strip {
+  background: var(--c-primary-dark);
+  color: #d7e4f5;
+  font-size: 12.5px;
+  padding: 7px 0;
+}
+.gov-strip .container { display: flex; align-items: center; gap: 9px; }
+.gov-strip svg { flex: none; opacity: 0.9; }
+
 /* ============ Header ============ */
 .site-header {
   position: sticky; top: 0; z-index: 50;
@@ -50,17 +60,31 @@ button { font-family: inherit; cursor: pointer; }
 .header-nav a:hover { color: var(--c-primary); }
 .badge-privacy {
   display: inline-flex; align-items: center; gap: 6px;
-  background: #e6fcf5; color: #087f5b;
+  background: #e9f5ec; color: #1e6b34;
+  border: 1px solid #c4e3cd;
   font-size: 12.5px; font-weight: 700;
-  padding: 5px 11px; border-radius: 999px;
+  padding: 5px 11px; border-radius: 6px;
 }
+
+/* ============ Vertrauens-Badges ============ */
+.trust-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+.tbadge {
+  display: inline-flex; align-items: center; gap: 9px;
+  background: var(--c-card); border: 1px solid var(--c-border);
+  border-left: 3px solid var(--c-primary);
+  border-radius: 6px; padding: 8px 13px;
+  box-shadow: var(--shadow-sm);
+}
+.tbadge svg { flex: none; color: var(--c-primary); }
+.tbadge .tb-txt { display: grid; line-height: 1.25; }
+.tbadge .tb-title { font-size: 12.5px; font-weight: 800; color: var(--c-ink); }
+.tbadge .tb-sub { font-size: 11px; color: var(--c-muted); }
 
 /* ============ Hero ============ */
 .hero {
   padding: 64px 0 72px;
   background:
-    radial-gradient(1000px 480px at 85% -10%, #dbe4ff 0%, transparent 60%),
-    radial-gradient(800px 400px at -10% 30%, #e6fcf5 0%, transparent 55%),
+    radial-gradient(1000px 480px at 85% -10%, #dde9f7 0%, transparent 60%),
     var(--c-bg);
 }
 .hero-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px; align-items: center; }
@@ -70,10 +94,7 @@ button { font-family: inherit; cursor: pointer; }
   background: var(--c-primary-light); padding: 6px 12px; border-radius: 999px; margin-bottom: 18px;
 }
 .hero h1 { font-size: clamp(30px, 4.4vw, 46px); font-weight: 800; margin-bottom: 18px; }
-.grad-text {
-  background: linear-gradient(100deg, var(--c-primary) 20%, #7048e8 80%);
-  -webkit-background-clip: text; background-clip: text; color: transparent;
-}
+.grad-text { color: var(--c-primary); }
 .hero-sub { font-size: 17px; color: var(--c-ink-soft); margin-bottom: 22px; max-width: 54ch; }
 .hero-points { list-style: none; display: grid; gap: 10px; }
 .hero-points li { padding-left: 30px; position: relative; color: var(--c-ink-soft); font-size: 15px; }
@@ -103,8 +124,8 @@ button { font-family: inherit; cursor: pointer; }
 .upload-icon {
   width: 84px; height: 84px; margin: 0 auto 18px;
   display: grid; place-items: center;
-  border-radius: 24px; color: var(--c-primary);
-  background: linear-gradient(135deg, var(--c-primary-light), #f3f0ff);
+  border-radius: 20px; color: var(--c-primary);
+  background: var(--c-primary-light);
 }
 .upload-inner h2 { font-size: 21px; margin-bottom: 4px; }
 .upload-inner > p, .upload-inner p { color: var(--c-muted); font-size: 14px; }
@@ -125,10 +146,10 @@ button { font-family: inherit; cursor: pointer; }
   transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
 }
 .btn:active { transform: scale(0.98); }
-.btn-primary { background: var(--c-primary); color: #fff; box-shadow: 0 4px 14px rgba(59, 91, 219, 0.35); }
+.btn-primary { background: var(--c-primary); color: #fff; box-shadow: 0 4px 14px rgba(23, 84, 156, 0.3); }
 .btn-primary:hover { background: var(--c-primary-dark); }
 .btn-secondary { background: var(--c-primary-light); color: var(--c-primary); }
-.btn-secondary:hover { background: #dbe4ff; }
+.btn-secondary:hover { background: #d8e5f4; }
 .btn-ghost { background: transparent; color: var(--c-ink-soft); border: 1px solid var(--c-border); padding: 8px 14px; font-size: 13.5px; }
 .btn-ghost:hover { border-color: var(--c-primary); color: var(--c-primary); }
 .btn-block { width: 100%; }
@@ -181,8 +202,8 @@ input[type="range"] { width: 100%; accent-color: var(--c-primary); height: 26px;
 
 .tag-ki {
   font-size: 10.5px; font-weight: 800; letter-spacing: 0.06em;
-  background: linear-gradient(100deg, #7048e8, var(--c-primary));
-  color: #fff; padding: 2.5px 8px; border-radius: 999px;
+  background: var(--c-primary);
+  color: #fff; padding: 2.5px 8px; border-radius: 4px;
 }
 .bg-options { display: flex; gap: 8px; flex-wrap: wrap; }
 .bg-chip {
@@ -252,8 +273,14 @@ input[type="range"] { width: 100%; accent-color: var(--c-primary); height: 26px;
   background: var(--c-bg); border: 1px solid var(--c-border);
   border-radius: var(--radius-sm); padding: 18px;
 }
-.req-card.req-auto { background: var(--c-primary-light); border-color: #d3ddff; }
-.req-card h4 { font-size: 14.5px; margin-bottom: 6px; }
+.req-card.req-auto { background: var(--c-primary-light); border-color: #cddcee; }
+.req-card h4 { font-size: 14.5px; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+.req-card h4 svg { flex: none; color: var(--c-primary); }
+.req-tag {
+  margin-left: auto; font-size: 10px; font-weight: 800; letter-spacing: 0.05em;
+  text-transform: uppercase; color: var(--c-primary);
+  border: 1px solid var(--c-primary); border-radius: 4px; padding: 1px 6px;
+}
 .req-card p { font-size: 13px; color: var(--c-ink-soft); }
 .notice {
   margin-top: 26px; font-size: 13.5px; color: var(--c-ink-soft);
