@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PassBild Pro – Biometrische Passfotos online erstellen</title>
+  <meta name="description" content="Erstellen Sie in Sekunden ein perfektes biometrisches Passbild (35×45 mm) mit automatischer KI-Gesichtserkennung, Live-Prüfung nach amtlichen Vorgaben und 600-dpi-Export – kostenlos und 100 % im Browser." />
+  <meta property="og:title" content="PassBild Pro – Biometrische Passfotos online" />
+  <meta property="og:description" content="Foto hochladen, KI richtet es biometrisch aus, Vorgaben werden live geprüft – Download in Druckqualität." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%233b5bdb'/%3E%3Ccircle cx='50' cy='40' r='16' fill='white'/%3E%3Cpath d='M22 88c0-16 12.5-26 28-26s28 10 28 26' fill='white'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><rect width="100" height="100" rx="22" fill="currentColor" opacity="0.15"/><circle cx="50" cy="40" r="15" fill="currentColor"/><path d="M24 86c0-15 12-25 26-25s26 10 26 25" fill="currentColor"/></svg>
+        </div>
+        <span class="brand-name">PassBild<span class="brand-accent">Pro</span></span>
+      </div>
+      <nav class="header-nav">
+        <a href="#anforderungen">Anforderungen</a>
+        <a href="#faq">FAQ</a>
+        <span class="badge-privacy" title="Ihre Fotos verlassen niemals Ihr Gerät – die gesamte Verarbeitung läuft lokal im Browser.">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          100 % lokal
+        </span>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===================== HERO / UPLOAD ===================== -->
+  <section class="hero" id="upload-section">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="hero-eyebrow">Biometrisch · Amtliche Vorgaben · Kostenlos</div>
+          <h1>Das perfekte <span class="grad-text">biometrische Passbild</span> in 30 Sekunden</h1>
+          <p class="hero-sub">
+            Foto hochladen oder aufnehmen – unsere KI erkennt Ihr Gesicht, richtet es
+            millimetergenau nach den amtlichen Vorgaben (35×45&nbsp;mm) aus und prüft
+            alle biometrischen Kriterien in Echtzeit. Export in Druckqualität mit 600&nbsp;dpi.
+          </p>
+          <ul class="hero-points">
+            <li><strong>Automatischer Zuschnitt</strong> – Kopfhöhe 70–80&nbsp;%, Augenzone &amp; Zentrierung</li>
+            <li><strong>Live-Prüfung</strong> von 8 biometrischen Kriterien</li>
+            <li><strong>KI-Hintergrund</strong> – neutral hellgrau, weiß oder hellblau</li>
+            <li><strong>Datenschutz</strong> – alles läuft lokal in Ihrem Browser, kein Upload auf Server</li>
+          </ul>
+        </div>
+
+        <div class="upload-card" id="dropzone" tabindex="0" role="button" aria-label="Foto hochladen">
+          <input type="file" id="file-input" accept="image/jpeg,image/png,image/webp,image/heic" hidden />
+          <div class="upload-inner">
+            <div class="upload-icon">
+              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            </div>
+            <h2>Foto hierher ziehen</h2>
+            <p>oder</p>
+            <div class="upload-buttons">
+              <button class="btn btn-primary" id="btn-choose" type="button">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                Foto auswählen
+              </button>
+              <button class="btn btn-secondary" id="btn-camera" type="button">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                Kamera nutzen
+              </button>
+            </div>
+            <p class="upload-hint">JPG, PNG oder WEBP · empfohlen mind. 900&nbsp;×&nbsp;1200&nbsp;px</p>
+          </div>
+          <div class="upload-loading" id="upload-loading" hidden>
+            <div class="spinner"></div>
+            <p id="loading-text">Bild wird analysiert …</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EDITOR ===================== -->
+  <section class="editor-section" id="editor-section" hidden>
+    <div class="container">
+      <div class="section-head">
+        <h2><span class="step-num">2</span> Ausrichten &amp; prüfen</h2>
+        <p>Die KI hat Ihr Foto automatisch positioniert. Feinjustierung per Ziehen, Mausrad oder Regler – die Schablone zeigt die zulässigen Zonen.</p>
+      </div>
+
+      <div class="editor-grid">
+        <!-- Canvas / preview -->
+        <div class="editor-canvas-col">
+          <div class="canvas-frame">
+            <canvas id="preview-canvas" width="700" height="900" aria-label="Passbild-Vorschau mit biometrischer Schablone"></canvas>
+            <div class="canvas-legend">
+              <span><i class="lg lg-eye"></i> Augenzone</span>
+              <span><i class="lg lg-face"></i> Kinn / Scheitel</span>
+              <span><i class="lg lg-center"></i> Mittelachse</span>
+            </div>
+          </div>
+          <div class="canvas-toolbar">
+            <button class="btn btn-ghost" id="btn-auto" type="button" title="Automatisch biometrisch ausrichten">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="4"/></svg>
+              Auto-Ausrichtung
+            </button>
+            <button class="btn btn-ghost" id="btn-overlay" type="button" aria-pressed="true">Schablone: an</button>
+            <button class="btn btn-ghost" id="btn-new" type="button">Anderes Foto</button>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="editor-controls-col">
+
+          <div class="panel">
+            <h3>Format</h3>
+            <select id="format-select" class="select" aria-label="Dokumentformat wählen"></select>
+            <p class="panel-hint" id="format-hint"></p>
+          </div>
+
+          <div class="panel">
+            <h3>Feinjustierung</h3>
+            <label class="slider-label" for="zoom-slider">Zoom <span id="zoom-value"></span></label>
+            <input type="range" id="zoom-slider" min="0" max="100" value="50" step="0.5" />
+            <label class="slider-label" for="rotate-slider">Drehung <span id="rotate-value">0°</span></label>
+            <input type="range" id="rotate-slider" min="-10" max="10" value="0" step="0.2" />
+            <p class="panel-hint">Tipp: Bild direkt in der Vorschau verschieben, Mausrad zum Zoomen.</p>
+          </div>
+
+          <div class="panel">
+            <h3>Hintergrund <span class="tag-ki">KI</span></h3>
+            <div class="bg-options" role="group" aria-label="Hintergrundfarbe">
+              <button class="bg-chip bg-original active" id="bg-original" type="button" data-bg="original" title="Original belassen">Original</button>
+              <button class="bg-chip" type="button" data-bg="#f2f2f2" title="Hellgrau (amtliche Empfehlung)"><span class="bg-dot" style="background:#f2f2f2"></span>Hellgrau</button>
+              <button class="bg-chip" type="button" data-bg="#ffffff" title="Weiß (z. B. US-Visum)"><span class="bg-dot" style="background:#ffffff"></span>Weiß</button>
+              <button class="bg-chip" type="button" data-bg="#dbe9f4" title="Hellblau"><span class="bg-dot" style="background:#dbe9f4"></span>Hellblau</button>
+            </div>
+            <p class="panel-hint" id="bg-hint">Entfernt den Hintergrund per KI direkt im Browser und ersetzt ihn durch eine amtlich zulässige, einfarbig helle Fläche. Erster Start lädt das KI-Modell (~5&nbsp;MB).</p>
+            <div class="bg-progress" id="bg-progress" hidden><div class="spinner spinner-sm"></div><span>KI-Modell arbeitet …</span></div>
+          </div>
+
+          <div class="panel panel-checks">
+            <h3>Biometrische Prüfung <span class="score-badge" id="score-badge">–</span></h3>
+            <ul class="check-list" id="check-list"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EXPORT ===================== -->
+  <section class="export-section" id="export-section" hidden>
+    <div class="container">
+      <div class="section-head">
+        <h2><span class="step-num">3</span> Herunterladen</h2>
+        <p>Export in Druckqualität. Die dpi-Angabe wird in die Datei eingebettet, damit das Bild exakt in der richtigen Größe gedruckt wird.</p>
+      </div>
+      <div class="export-grid">
+        <div class="export-card">
+          <div class="export-thumb export-thumb-single" id="export-thumb-single"></div>
+          <h3>Einzelbild</h3>
+          <p id="export-single-desc">35 × 45 mm · 827 × 1063 px · 600 dpi · JPG</p>
+          <button class="btn btn-primary btn-block" id="btn-download-single" type="button">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Passbild herunterladen
+          </button>
+        </div>
+        <div class="export-card">
+          <div class="export-thumb export-thumb-sheet" id="export-thumb-sheet"></div>
+          <h3>Druckbogen 10 × 15 cm</h3>
+          <p>4 Passbilder mit Schnittmarken – im Drogeriemarkt oder Fotolabor als normales 10×15-Foto (ca. 0,10–0,25 €) ausdrucken lassen.</p>
+          <button class="btn btn-secondary btn-block" id="btn-download-sheet" type="button">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+            Druckbogen herunterladen
+          </button>
+        </div>
+      </div>
+      <p class="export-warning" id="export-warning" hidden></p>
+    </div>
+  </section>
+
+  <!-- ===================== REQUIREMENTS ===================== -->
+  <section class="req-section" id="anforderungen">
+    <div class="container">
+      <div class="section-head">
+        <h2>Amtliche Anforderungen im Überblick</h2>
+        <p>Diese Kriterien prüft das Tool automatisch (blau) – die übrigen Punkte stellen Sie bitte bereits bei der Aufnahme sicher.</p>
+      </div>
+      <div class="req-grid">
+        <div class="req-card req-auto"><h4>📐 Format 35 × 45 mm</h4><p>Hochformat ohne Rand. Digital mind. 413×531 px (300 dpi), empfohlen 827×1063 px (600 dpi).</p></div>
+        <div class="req-card req-auto"><h4>👤 Kopfhöhe 70–80 %</h4><p>Gesichtshöhe von Kinn bis Scheitel: 32–36 mm, also 70–80 % der Bildhöhe.</p></div>
+        <div class="req-card req-auto"><h4>👁️ Augenlinie in der Zone</h4><p>Die Augen müssen im mittleren oberen Bereich des Bildes liegen und klar erkennbar sein.</p></div>
+        <div class="req-card req-auto"><h4>🎯 Zentriert &amp; gerade</h4><p>Gesicht horizontal mittig, Kopf nicht geneigt oder gedreht (Frontalaufnahme).</p></div>
+        <div class="req-card req-auto"><h4>🖼️ Heller Hintergrund</h4><p>Einfarbig hell (ideal hellgrau), kontrastreich zum Gesicht, ohne Muster und Schatten.</p></div>
+        <div class="req-card"><h4>😐 Neutraler Ausdruck</h4><p>Mund geschlossen, nicht lächeln, direkt in die Kamera blicken.</p></div>
+        <div class="req-card"><h4>💡 Gleichmäßiges Licht</h4><p>Keine Schatten im Gesicht oder auf dem Hintergrund, keine Reflexionen, keine roten Augen.</p></div>
+        <div class="req-card"><h4>👓 Brille &amp; Kopfbedeckung</h4><p>Augen nicht verdeckt, keine Spiegelungen auf Gläsern, Kopfbedeckung nur aus religiösen/medizinischen Gründen.</p></div>
+      </div>
+      <div class="notice">
+        <strong>Hinweis für deutsche Pässe &amp; Personalausweise:</strong> Seit Mai 2025 akzeptieren deutsche Behörden nur noch digital übermittelte Fotos von zertifizierten Anbietern (Fotofachgeschäft oder Behörden-Terminal). Die hier erstellten Bilder eignen sich hervorragend zur Vorbereitung sowie für Führerschein, Bewerbungen, Visa und Ausweisdokumente vieler anderer Länder – bitte prüfen Sie die Vorgaben der jeweiligen Behörde.
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FAQ ===================== -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-head"><h2>Häufige Fragen</h2></div>
+      <details><summary>Werden meine Fotos hochgeladen?</summary><p>Nein. Gesichtserkennung, Zuschnitt und Hintergrundentfernung laufen vollständig lokal in Ihrem Browser (WebAssembly). Ihr Foto verlässt Ihr Gerät zu keinem Zeitpunkt.</p></details>
+      <details><summary>Welche Fotoqualität brauche ich?</summary><p>Das Ausgangsfoto sollte scharf und gut belichtet sein. Für 600 dpi Druckqualität sollte der Gesichtsausschnitt mindestens ca. 830×1060 Pixel groß sein – moderne Smartphone-Fotos erfüllen das problemlos. Halten Sie bei der Aufnahme etwas Abstand (1,5–2 m) und lassen Sie Platz um den Kopf.</p></details>
+      <details><summary>Wie fotografiere ich am besten?</summary><p>Tageslicht von vorn (z. B. vor einem Fenster stehend), einfarbige helle Wand mit ca. 1 m Abstand dahinter (vermeidet Schatten), Kamera auf Augenhöhe, neutraler Blick, Mund geschlossen.</p></details>
+      <details><summary>Kann ich die Bilder für den deutschen Reisepass verwenden?</summary><p>Deutsche Pass- und Ausweisbehörden verlangen seit Mai 2025 digital übermittelte Fotos zertifizierter Anbieter. Für Führerschein, viele Visa-Anträge und Dokumente anderer Länder sind selbst erstellte biometrische Fotos weiterhin zulässig.</p></details>
+      <details><summary>Was kostet der Ausdruck?</summary><p>Laden Sie den 10×15-Druckbogen herunter und lassen Sie ihn als normales Foto im Drogeriemarkt oder Fotolabor drucken – meist 0,10–0,25 €. Anschließend entlang der Schnittmarken schneiden: 4 Passbilder für wenige Cent.</p></details>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>PassBildPro · Verarbeitung zu 100 % lokal im Browser · Keine Cookies, kein Tracking.</p>
+      <p class="footer-small">Ohne Gewähr: Bitte prüfen Sie stets die aktuellen Vorgaben der zuständigen Behörde. Grundlage: Foto-Mustertafel des BMI / ICAO 9303.</p>
+    </div>
+  </footer>
+
+  <!-- Camera modal -->
+  <div class="modal" id="camera-modal" hidden>
+    <div class="modal-box">
+      <h3>Foto aufnehmen</h3>
+      <div class="camera-wrap">
+        <video id="camera-video" autoplay playsinline muted></video>
+        <div class="camera-guide" aria-hidden="true"></div>
+      </div>
+      <p class="panel-hint">Kamera auf Augenhöhe, Gesicht in den Rahmen, neutraler Blick.</p>
+      <div class="modal-actions">
+        <button class="btn btn-secondary" id="btn-camera-cancel" type="button">Abbrechen</button>
+        <button class="btn btn-primary" id="btn-camera-shoot" type="button">Aufnehmen</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" hidden></div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
