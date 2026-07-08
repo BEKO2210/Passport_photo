@@ -9,7 +9,7 @@
   <meta property="og:description" content="Foto hochladen, KI richtet es biometrisch aus, Vorgaben werden live geprüft – Download in Druckqualität." />
   <meta property="og:type" content="website" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%233b5bdb'/%3E%3Ccircle cx='50' cy='40' r='16' fill='white'/%3E%3Cpath d='M22 88c0-16 12.5-26 28-26s28 10 28 26' fill='white'/%3E%3C/svg%3E" />
-  <link rel="stylesheet" href="css/style.css?v=4" />
+  <link rel="stylesheet" href="css/style.css?v=6" />
 </head>
 <body>
 
@@ -22,12 +22,13 @@
         <span class="brand-name">PassBild<span class="brand-accent">Pro</span></span>
       </div>
       <nav class="header-nav">
-        <a href="#anforderungen">Anforderungen</a>
+        <a href="#anforderungen" data-en="Requirements">Anforderungen</a>
         <a href="#faq">FAQ</a>
         <span class="badge-privacy" title="Ihre Fotos verlassen niemals Ihr Gerät – die gesamte Bildverarbeitung läuft lokal im Browser.">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          Keine Foto-Uploads
+          <span data-en="No photo uploads">Keine Foto-Uploads</span>
         </span>
+        <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch to English">EN</button>
       </nav>
     </div>
   </header>
@@ -37,35 +38,35 @@
     <div class="container">
       <div class="hero-grid">
         <div class="hero-copy">
-          <div class="hero-eyebrow">Biometrisch · Amtliche Vorgaben · Kostenlos</div>
-          <h1>Das perfekte <span class="grad-text">biometrische Passbild</span> in 30 Sekunden</h1>
-          <p class="hero-sub">
+          <div class="hero-eyebrow" data-en="Biometric · Official specs · Free">Biometrisch · Amtliche Vorgaben · Kostenlos</div>
+          <h1 data-en-html='The perfect <span class="grad-text">biometric passport photo</span> in 30 seconds'>Das perfekte <span class="grad-text">biometrische Passbild</span> in 30 Sekunden</h1>
+          <p class="hero-sub" data-en="Upload or take a photo – our AI detects your face, aligns it to the official specs (35×45 mm) down to the millimetre, and checks every biometric criterion in real time. Export in print quality at 600 dpi.">
             Foto hochladen oder aufnehmen – unsere KI erkennt Ihr Gesicht, richtet es
             millimetergenau nach den amtlichen Vorgaben (35×45&nbsp;mm) aus und prüft
             alle biometrischen Kriterien in Echtzeit. Export in Druckqualität mit 600&nbsp;dpi.
           </p>
           <ul class="hero-points">
-            <li><strong>Automatischer Zuschnitt</strong> – Kopfhöhe 70–80&nbsp;%, Augenzone &amp; Zentrierung</li>
-            <li><strong>Live-Prüfung</strong> von 8 biometrischen Kriterien</li>
-            <li><strong>KI-Hintergrund</strong> – neutral hellgrau, weiß oder hellblau</li>
-            <li><strong>Datenschutz</strong> – Ihre Fotos werden lokal im Browser verarbeitet und nicht hochgeladen</li>
+            <li data-en-html="<strong>Automatic cropping</strong> – head height 70–80%, eye zone &amp; centring"><strong>Automatischer Zuschnitt</strong> – Kopfhöhe 70–80&nbsp;%, Augenzone &amp; Zentrierung</li>
+            <li data-en-html="<strong>Live check</strong> of 8 biometric criteria"><strong>Live-Prüfung</strong> von 8 biometrischen Kriterien</li>
+            <li data-en-html="<strong>AI background</strong> – neutral light grey, white or light blue"><strong>KI-Hintergrund</strong> – neutral hellgrau, weiß oder hellblau</li>
+            <li data-en-html="<strong>Privacy</strong> – your photos are processed locally in the browser and never uploaded"><strong>Datenschutz</strong> – Ihre Fotos werden lokal im Browser verarbeitet und nicht hochgeladen</li>
           </ul>
           <div class="trust-badges" aria-label="Qualitätsmerkmale">
             <span class="tbadge">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-              <span class="tb-txt"><span class="tb-title">ICAO 9303</span><span class="tb-sub">Internationaler Standard umgesetzt</span></span>
+              <span class="tb-txt"><span class="tb-title">ICAO 9303</span><span class="tb-sub" data-en="International standard implemented">Internationaler Standard umgesetzt</span></span>
             </span>
             <span class="tbadge">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg>
-              <span class="tb-txt"><span class="tb-title">Foto-Mustertafel BMI</span><span class="tb-sub">Maßvorgaben 35 × 45 mm</span></span>
+              <span class="tb-txt"><span class="tb-title">Foto-Mustertafel BMI</span><span class="tb-sub" data-en="Size specs 35 × 45 mm">Maßvorgaben 35 × 45 mm</span></span>
             </span>
             <span class="tbadge">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-              <span class="tb-txt"><span class="tb-title">Lokale Verarbeitung</span><span class="tb-sub">Fotos bleiben auf Ihrem Gerät</span></span>
+              <span class="tb-txt"><span class="tb-title" data-en="Local processing">Lokale Verarbeitung</span><span class="tb-sub" data-en="Photos stay on your device">Fotos bleiben auf Ihrem Gerät</span></span>
             </span>
             <span class="tbadge">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-              <span class="tb-txt"><span class="tb-title">600 dpi</span><span class="tb-sub">Druckqualität mit Maßhaltigkeit</span></span>
+              <span class="tb-txt"><span class="tb-title">600 dpi</span><span class="tb-sub" data-en="Print quality, true to size">Druckqualität mit Maßhaltigkeit</span></span>
             </span>
           </div>
         </div>
@@ -76,19 +77,19 @@
             <div class="upload-icon">
               <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
             </div>
-            <h2>Foto hierher ziehen</h2>
-            <p>oder</p>
+            <h2 data-en="Drag your photo here">Foto hierher ziehen</h2>
+            <p data-en="or">oder</p>
             <div class="upload-buttons">
               <button class="btn btn-primary" id="btn-choose" type="button">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-                Foto auswählen
+                <span data-en="Choose photo">Foto auswählen</span>
               </button>
               <button class="btn btn-secondary" id="btn-camera" type="button">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-                Kamera nutzen
+                <span data-en="Use camera">Kamera nutzen</span>
               </button>
             </div>
-            <p class="upload-hint">JPG, PNG oder WEBP · empfohlen mind. 900&nbsp;×&nbsp;1200&nbsp;px</p>
+            <p class="upload-hint" data-en-html="JPG, PNG or WEBP · recommended min. 900 × 1200 px">JPG, PNG oder WEBP · empfohlen mind. 900&nbsp;×&nbsp;1200&nbsp;px</p>
           </div>
           <div class="upload-loading" id="upload-loading" hidden>
             <div class="spinner"></div>
@@ -103,8 +104,8 @@
   <section class="editor-section" id="editor-section" hidden>
     <div class="container">
       <div class="section-head">
-        <h2><span class="step-num">2</span> Ausrichten &amp; prüfen</h2>
-        <p>Die KI hat Ihr Foto automatisch positioniert. Feinjustierung per Ziehen, Mausrad oder Regler – die Schablone zeigt die zulässigen Zonen.</p>
+        <h2 data-en-html='<span class="step-num">2</span> Align &amp; check'><span class="step-num">2</span> Ausrichten &amp; prüfen</h2>
+        <p data-en="The AI has positioned your photo automatically. Fine-tune by dragging, scrolling or using the sliders – the guide shows the allowed zones.">Die KI hat Ihr Foto automatisch positioniert. Feinjustierung per Ziehen, Mausrad oder Regler – die Schablone zeigt die zulässigen Zonen.</p>
       </div>
 
       <div class="editor-grid">
@@ -113,18 +114,18 @@
           <div class="canvas-frame">
             <canvas id="preview-canvas" width="700" height="900" aria-label="Passbild-Vorschau mit biometrischer Schablone"></canvas>
             <div class="canvas-legend">
-              <span><i class="lg lg-eye"></i> Augenzone</span>
-              <span><i class="lg lg-face"></i> Kinn / Scheitel</span>
-              <span><i class="lg lg-center"></i> Mittelachse</span>
+              <span><i class="lg lg-eye"></i> <span data-en="Eye zone">Augenzone</span></span>
+              <span><i class="lg lg-face"></i> <span data-en="Chin / crown">Kinn / Scheitel</span></span>
+              <span><i class="lg lg-center"></i> <span data-en="Centre line">Mittelachse</span></span>
             </div>
           </div>
           <div class="canvas-toolbar">
-            <button class="btn btn-ghost" id="btn-auto" type="button" title="Automatisch biometrisch ausrichten">
+            <button class="btn btn-ghost" id="btn-auto" type="button" title="Auto biometric alignment">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="4"/></svg>
-              Auto-Ausrichtung
+              <span data-en="Auto-align">Auto-Ausrichtung</span>
             </button>
             <button class="btn btn-ghost" id="btn-overlay" type="button" aria-pressed="true">Schablone: an</button>
-            <button class="btn btn-ghost" id="btn-new" type="button">Anderes Foto</button>
+            <button class="btn btn-ghost" id="btn-new" type="button" data-en="Other photo">Anderes Foto</button>
           </div>
         </div>
 
@@ -132,34 +133,34 @@
         <div class="editor-controls-col">
 
           <div class="panel">
-            <h3>Format</h3>
+            <h3 data-en="Format">Format</h3>
             <select id="format-select" class="select" aria-label="Dokumentformat wählen"></select>
             <p class="panel-hint" id="format-hint"></p>
           </div>
 
           <div class="panel">
-            <h3>Feinjustierung</h3>
-            <label class="slider-label" for="zoom-slider">Zoom <span id="zoom-value"></span></label>
+            <h3 data-en="Fine-tuning">Feinjustierung</h3>
+            <label class="slider-label" for="zoom-slider"><span data-en="Zoom">Zoom</span> <span id="zoom-value"></span></label>
             <input type="range" id="zoom-slider" min="0" max="100" value="50" step="0.5" />
-            <label class="slider-label" for="rotate-slider">Drehung <span id="rotate-value">0°</span></label>
+            <label class="slider-label" for="rotate-slider"><span data-en="Rotation">Drehung</span> <span id="rotate-value">0°</span></label>
             <input type="range" id="rotate-slider" min="-10" max="10" value="0" step="0.2" />
-            <p class="panel-hint">Tipp: Bild direkt in der Vorschau verschieben, Mausrad zum Zoomen.</p>
+            <p class="panel-hint" data-en="Tip: drag the image right in the preview, scroll to zoom.">Tipp: Bild direkt in der Vorschau verschieben, Mausrad zum Zoomen.</p>
           </div>
 
           <div class="panel">
-            <h3>Hintergrund <span class="tag-ki">KI</span></h3>
+            <h3><span data-en="Background">Hintergrund</span> <span class="tag-ki">KI</span></h3>
             <div class="bg-options" role="group" aria-label="Hintergrundfarbe">
-              <button class="bg-chip bg-original active" id="bg-original" type="button" data-bg="original" title="Original belassen">Original</button>
-              <button class="bg-chip" type="button" data-bg="#f2f2f2" title="Hellgrau (amtliche Empfehlung)"><span class="bg-dot" style="background:#f2f2f2"></span>Hellgrau</button>
-              <button class="bg-chip" type="button" data-bg="#ffffff" title="Weiß (z. B. US-Visum)"><span class="bg-dot" style="background:#ffffff"></span>Weiß</button>
-              <button class="bg-chip" type="button" data-bg="#dbe9f4" title="Hellblau"><span class="bg-dot" style="background:#dbe9f4"></span>Hellblau</button>
+              <button class="bg-chip bg-original active" id="bg-original" type="button" data-bg="original" title="Keep original">Original</button>
+              <button class="bg-chip" type="button" data-bg="#f2f2f2" title="Light grey (official recommendation)"><span class="bg-dot" style="background:#f2f2f2"></span><span data-en="Light grey">Hellgrau</span></button>
+              <button class="bg-chip" type="button" data-bg="#ffffff" title="White (e.g. US visa)"><span class="bg-dot" style="background:#ffffff"></span><span data-en="White">Weiß</span></button>
+              <button class="bg-chip" type="button" data-bg="#dbe9f4" title="Light blue"><span class="bg-dot" style="background:#dbe9f4"></span><span data-en="Light blue">Hellblau</span></button>
             </div>
-            <p class="panel-hint" id="bg-hint">Entfernt den Hintergrund per KI direkt im Browser und ersetzt ihn durch eine amtlich zulässige, einfarbig helle Fläche. Beim ersten Einsatz wird einmalig das KI-Modell heruntergeladen (mehrere MB) – Ihr Foto bleibt dabei auf Ihrem Gerät.</p>
-            <div class="bg-progress" id="bg-progress" hidden><div class="spinner spinner-sm"></div><span>KI-Modell arbeitet …</span></div>
+            <p class="panel-hint" id="bg-hint" data-en="Removes the background with AI right in your browser and replaces it with an officially acceptable, plain light surface. On first use the AI model is downloaded once (several MB) – your photo stays on your device.">Entfernt den Hintergrund per KI direkt im Browser und ersetzt ihn durch eine amtlich zulässige, einfarbig helle Fläche. Beim ersten Einsatz wird einmalig das KI-Modell heruntergeladen (mehrere MB) – Ihr Foto bleibt dabei auf Ihrem Gerät.</p>
+            <div class="bg-progress" id="bg-progress" hidden><div class="spinner spinner-sm"></div><span data-en="AI model working …">KI-Modell arbeitet …</span></div>
           </div>
 
           <div class="panel panel-checks">
-            <h3>Biometrische Prüfung <span class="score-badge" id="score-badge">–</span></h3>
+            <h3><span data-en="Biometric check">Biometrische Prüfung</span> <span class="score-badge" id="score-badge">–</span></h3>
             <ul class="check-list" id="check-list"></ul>
           </div>
         </div>
@@ -171,26 +172,26 @@
   <section class="export-section" id="export-section" hidden>
     <div class="container">
       <div class="section-head">
-        <h2><span class="step-num">3</span> Herunterladen</h2>
-        <p>Export in Druckqualität. Die dpi-Angabe wird in die Datei eingebettet, damit das Bild exakt in der richtigen Größe gedruckt wird.</p>
+        <h2 data-en-html='<span class="step-num">3</span> Download'><span class="step-num">3</span> Herunterladen</h2>
+        <p data-en="Export in print quality. The dpi value is embedded in the file so the image prints at exactly the right size.">Export in Druckqualität. Die dpi-Angabe wird in die Datei eingebettet, damit das Bild exakt in der richtigen Größe gedruckt wird.</p>
       </div>
       <div class="export-grid">
         <div class="export-card">
           <div class="export-thumb export-thumb-single" id="export-thumb-single"></div>
-          <h3>Einzelbild</h3>
+          <h3 data-en="Single photo">Einzelbild</h3>
           <p id="export-single-desc">35 × 45 mm · 827 × 1063 px · 600 dpi · JPG</p>
           <button class="btn btn-primary btn-block" id="btn-download-single" type="button">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Passbild herunterladen
+            <span data-en="Download HD">HD herunterladen</span>
           </button>
         </div>
         <div class="export-card">
           <div class="export-thumb export-thumb-sheet" id="export-thumb-sheet"></div>
-          <h3>Druckbogen 10 × 15 cm</h3>
+          <h3 data-en="Print sheet 10 × 15 cm">Druckbogen 10 × 15 cm</h3>
           <p>4 Passbilder mit Schnittmarken – im Drogeriemarkt oder Fotolabor als normales 10×15-Foto (ca. 0,10–0,25 €) ausdrucken lassen.</p>
           <button class="btn btn-secondary btn-block" id="btn-download-sheet" type="button">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-            Druckbogen herunterladen
+            <span data-en="Download print sheet">Druckbogen herunterladen</span>
           </button>
         </div>
       </div>
@@ -202,21 +203,21 @@
   <section class="req-section" id="anforderungen">
     <div class="container">
       <div class="section-head">
-        <h2>Amtliche Anforderungen im Überblick</h2>
-        <p>Kriterien mit der Kennzeichnung „Auto" prüft das Tool automatisch – die übrigen Punkte stellen Sie bitte bereits bei der Aufnahme sicher.</p>
+        <h2 data-en="Official requirements at a glance">Amtliche Anforderungen im Überblick</h2>
+        <p data-en="Criteria marked &quot;Auto&quot; are checked automatically – please ensure the remaining points already when taking the photo.">Kriterien mit der Kennzeichnung „Auto" prüft das Tool automatisch – die übrigen Punkte stellen Sie bitte bereits bei der Aufnahme sicher.</p>
       </div>
       <div class="req-grid">
-        <div class="req-card req-auto"><h4><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="12" height="18" rx="1.5"/><line x1="6" y1="8" x2="9" y2="8"/><line x1="6" y1="12" x2="9" y2="12"/><line x1="6" y1="16" x2="9" y2="16"/></svg>Format 35 × 45 mm<span class="req-tag">Auto</span></h4><p>Hochformat ohne Rand. Digital mind. 413×531 px (300 dpi), empfohlen 827×1063 px (600 dpi).</p></div>
-        <div class="req-card req-auto"><h4><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4.5"/><path d="M4 21c0-4.5 3.5-7 8-7s8 2.5 8 7"/></svg>Kopfhöhe 70–80 %<span class="req-tag">Auto</span></h4><p>Gesichtshöhe von Kinn bis Scheitel: 32–36 mm, also 70–80 % der Bildhöhe.</p></div>
-        <div class="req-card req-auto"><h4><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>Augenlinie in der Zone<span class="req-tag">Auto</span></h4><p>Die Augen müssen im mittleren oberen Bereich des Bildes liegen und klar erkennbar sein.</p></div>
-        <div class="req-card req-auto"><h4><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5"/><line x1="12" y1="1.5" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22.5" y2="12"/></svg>Zentriert &amp; gerade<span class="req-tag">Auto</span></h4><p>Gesicht horizontal mittig, Kopf nicht geneigt oder gedreht (Frontalaufnahme).</p></div>
-        <div class="req-card req-auto"><h4><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>Heller Hintergrund<span class="req-tag">Auto</span></h4><p>Einfarbig hell (ideal hellgrau), kontrastreich zum Gesicht, ohne Muster und Schatten.</p></div>
-        <div class="req-card"><h4><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="8" y1="15" x2="16" y2="15"/><line x1="9" y1="9.5" x2="9.01" y2="9.5"/><line x1="15" y1="9.5" x2="15.01" y2="9.5"/></svg>Neutraler Ausdruck</h4><p>Mund geschlossen, nicht lächeln, direkt in die Kamera blicken.</p></div>
-        <div class="req-card"><h4><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><line x1="12" y1="2" x2="12" y2="4.5"/><line x1="12" y1="19.5" x2="12" y2="22"/><line x1="4.9" y1="4.9" x2="6.7" y2="6.7"/><line x1="17.3" y1="17.3" x2="19.1" y2="19.1"/><line x1="2" y1="12" x2="4.5" y2="12"/><line x1="19.5" y1="12" x2="22" y2="12"/><line x1="4.9" y1="19.1" x2="6.7" y2="17.3"/><line x1="17.3" y1="6.7" x2="19.1" y2="4.9"/></svg>Gleichmäßiges Licht</h4><p>Keine Schatten im Gesicht oder auf dem Hintergrund, keine Reflexionen, keine roten Augen.</p></div>
-        <div class="req-card"><h4><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.5" cy="14" r="3.5"/><circle cx="17.5" cy="14" r="3.5"/><path d="M10 14h4"/><path d="M3 14l1.5-6h2M21 14l-1.5-6h-2"/></svg>Brille &amp; Kopfbedeckung</h4><p>Augen nicht verdeckt, keine Spiegelungen auf Gläsern, Kopfbedeckung nur aus religiösen/medizinischen Gründen.</p></div>
+        <div class="req-card req-auto"><h4><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="12" height="18" rx="1.5"/><line x1="6" y1="8" x2="9" y2="8"/><line x1="6" y1="12" x2="9" y2="12"/><line x1="6" y1="16" x2="9" y2="16"/></svg><span data-en-html="Format 35 × 45 mm">Format 35 × 45 mm</span><span class="req-tag">Auto</span></h4><p data-en="Portrait orientation, no border. Digital min. 413×531 px (300 dpi), recommended 827×1063 px (600 dpi).">Hochformat ohne Rand. Digital mind. 413×531 px (300 dpi), empfohlen 827×1063 px (600 dpi).</p></div>
+        <div class="req-card req-auto"><h4><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4.5"/><path d="M4 21c0-4.5 3.5-7 8-7s8 2.5 8 7"/></svg><span data-en-html="Head height 70–80%">Kopfhöhe 70–80 %</span><span class="req-tag">Auto</span></h4><p data-en="Face height from chin to crown: 32–36 mm, i.e. 70–80% of the image height.">Gesichtshöhe von Kinn bis Scheitel: 32–36 mm, also 70–80 % der Bildhöhe.</p></div>
+        <div class="req-card req-auto"><h4><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg><span data-en-html="Eye line in the zone">Augenlinie in der Zone</span><span class="req-tag">Auto</span></h4><p data-en="The eyes must sit in the upper-middle area of the image and be clearly visible.">Die Augen müssen im mittleren oberen Bereich des Bildes liegen und klar erkennbar sein.</p></div>
+        <div class="req-card req-auto"><h4><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5"/><line x1="12" y1="1.5" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22.5" y2="12"/></svg><span data-en-html="Centred &amp; straight">Zentriert &amp; gerade</span><span class="req-tag">Auto</span></h4><p data-en="Face horizontally centred, head not tilted or turned (front-facing).">Gesicht horizontal mittig, Kopf nicht geneigt oder gedreht (Frontalaufnahme).</p></div>
+        <div class="req-card req-auto"><h4><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span data-en-html="Light background">Heller Hintergrund</span><span class="req-tag">Auto</span></h4><p data-en="Plain light (ideally light grey), contrasting with the face, no patterns or shadows.">Einfarbig hell (ideal hellgrau), kontrastreich zum Gesicht, ohne Muster und Schatten.</p></div>
+        <div class="req-card"><h4><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="8" y1="15" x2="16" y2="15"/><line x1="9" y1="9.5" x2="9.01" y2="9.5"/><line x1="15" y1="9.5" x2="15.01" y2="9.5"/></svg><span data-en="Neutral expression">Neutraler Ausdruck</span></h4><p data-en="Mouth closed, no smiling, look straight into the camera.">Mund geschlossen, nicht lächeln, direkt in die Kamera blicken.</p></div>
+        <div class="req-card"><h4><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><line x1="12" y1="2" x2="12" y2="4.5"/><line x1="12" y1="19.5" x2="12" y2="22"/><line x1="4.9" y1="4.9" x2="6.7" y2="6.7"/><line x1="17.3" y1="17.3" x2="19.1" y2="19.1"/><line x1="2" y1="12" x2="4.5" y2="12"/><line x1="19.5" y1="12" x2="22" y2="12"/><line x1="4.9" y1="19.1" x2="6.7" y2="17.3"/><line x1="17.3" y1="6.7" x2="19.1" y2="4.9"/></svg><span data-en="Even lighting">Gleichmäßiges Licht</span></h4><p data-en="No shadows on the face or background, no reflections, no red eyes.">Keine Schatten im Gesicht oder auf dem Hintergrund, keine Reflexionen, keine roten Augen.</p></div>
+        <div class="req-card"><h4><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.5" cy="14" r="3.5"/><circle cx="17.5" cy="14" r="3.5"/><path d="M10 14h4"/><path d="M3 14l1.5-6h2M21 14l-1.5-6h-2"/></svg><span data-en-html="Glasses &amp; headwear">Brille &amp; Kopfbedeckung</span></h4><p data-en="Eyes not covered, no glare on lenses, headwear only for religious/medical reasons.">Augen nicht verdeckt, keine Spiegelungen auf Gläsern, Kopfbedeckung nur aus religiösen/medizinischen Gründen.</p></div>
       </div>
       <div class="notice">
-        <strong>Hinweis für deutsche Pässe &amp; Personalausweise:</strong> Seit Mai 2025 akzeptieren deutsche Behörden nur noch digital übermittelte Fotos von zertifizierten Anbietern (Fotofachgeschäft oder Behörden-Terminal). Die hier erstellten Bilder eignen sich hervorragend zur Vorbereitung sowie für Führerschein, Bewerbungen, Visa und Ausweisdokumente vieler anderer Länder – bitte prüfen Sie die Vorgaben der jeweiligen Behörde.
+        <span data-en-html="<strong>Note for German passports &amp; ID cards:</strong> Since May 2025 German authorities only accept digitally transmitted photos from certified providers (photo shop or authority terminal). The photos created here are ideal for preparation as well as for driving licences, job applications, visas and ID documents of many other countries – please check the requirements of the relevant authority."><strong>Hinweis für deutsche Pässe &amp; Personalausweise:</strong> Seit Mai 2025 akzeptieren deutsche Behörden nur noch digital übermittelte Fotos von zertifizierten Anbietern (Fotofachgeschäft oder Behörden-Terminal). Die hier erstellten Bilder eignen sich hervorragend zur Vorbereitung sowie für Führerschein, Bewerbungen, Visa und Ausweisdokumente vieler anderer Länder – bitte prüfen Sie die Vorgaben der jeweiligen Behörde.</span>
       </div>
     </div>
   </section>
@@ -224,12 +225,12 @@
   <!-- ===================== FAQ ===================== -->
   <section class="faq-section" id="faq">
     <div class="container">
-      <div class="section-head"><h2>Häufige Fragen</h2></div>
-      <details><summary>Werden meine Fotos hochgeladen?</summary><p>Nein. Gesichtserkennung, Zuschnitt und Hintergrundentfernung laufen vollständig lokal in Ihrem Browser (WebAssembly). Ihr Foto verlässt Ihr Gerät zu keinem Zeitpunkt. Zur Transparenz: Die optionale KI-Hintergrundentfernung lädt beim ersten Einsatz einmalig das KI-Modell (Programmdaten, mehrere MB) von einem Content-Delivery-Netzwerk herunter – dabei werden nur Programmdateien empfangen, niemals Ihre Bilder versendet.</p></details>
-      <details><summary>Welche Fotoqualität brauche ich?</summary><p>Das Ausgangsfoto sollte scharf und gut belichtet sein. Für 600 dpi Druckqualität sollte der Gesichtsausschnitt mindestens ca. 830×1060 Pixel groß sein – moderne Smartphone-Fotos erfüllen das problemlos. Halten Sie bei der Aufnahme etwas Abstand (1,5–2 m) und lassen Sie Platz um den Kopf.</p></details>
-      <details><summary>Wie fotografiere ich am besten?</summary><p>Tageslicht von vorn (z. B. vor einem Fenster stehend), einfarbige helle Wand mit ca. 1 m Abstand dahinter (vermeidet Schatten), Kamera auf Augenhöhe, neutraler Blick, Mund geschlossen.</p></details>
-      <details><summary>Kann ich die Bilder für den deutschen Reisepass verwenden?</summary><p>Deutsche Pass- und Ausweisbehörden verlangen seit Mai 2025 digital übermittelte Fotos zertifizierter Anbieter. Für Führerschein, viele Visa-Anträge und Dokumente anderer Länder sind selbst erstellte biometrische Fotos weiterhin zulässig.</p></details>
-      <details><summary>Was kostet der Ausdruck?</summary><p>Laden Sie den 10×15-Druckbogen herunter und lassen Sie ihn als normales Foto im Drogeriemarkt oder Fotolabor drucken – meist 0,10–0,25 €. Anschließend entlang der Schnittmarken schneiden: 4 Passbilder für wenige Cent.</p></details>
+      <div class="section-head"><h2 data-en="Frequently asked questions">Häufige Fragen</h2></div>
+      <details><summary data-en="Are my photos uploaded?">Werden meine Fotos hochgeladen?</summary><p data-en="No. Face detection, cropping and background removal run entirely locally in your browser (WebAssembly). Your photo never leaves your device. For transparency: the optional AI background removal downloads the AI model (program data, several MB) once from a content delivery network on first use – only program files are received, your images are never sent.">Nein. Gesichtserkennung, Zuschnitt und Hintergrundentfernung laufen vollständig lokal in Ihrem Browser (WebAssembly). Ihr Foto verlässt Ihr Gerät zu keinem Zeitpunkt. Zur Transparenz: Die optionale KI-Hintergrundentfernung lädt beim ersten Einsatz einmalig das KI-Modell (Programmdaten, mehrere MB) von einem Content-Delivery-Netzwerk herunter – dabei werden nur Programmdateien empfangen, niemals Ihre Bilder versendet.</p></details>
+      <details><summary data-en="What photo quality do I need?">Welche Fotoqualität brauche ich?</summary><p data-en="The source photo should be sharp and well exposed. For 600 dpi print quality the face crop should be at least approx. 830×1060 pixels – modern smartphone photos easily meet this. Keep some distance when shooting (1.5–2 m) and leave space around the head.">Das Ausgangsfoto sollte scharf und gut belichtet sein. Für 600 dpi Druckqualität sollte der Gesichtsausschnitt mindestens ca. 830×1060 Pixel groß sein – moderne Smartphone-Fotos erfüllen das problemlos. Halten Sie bei der Aufnahme etwas Abstand (1,5–2 m) und lassen Sie Platz um den Kopf.</p></details>
+      <details><summary data-en="How do I take the best photo?">Wie fotografiere ich am besten?</summary><p data-en="Daylight from the front (e.g. standing by a window), a plain light wall about 1 m behind you (avoids shadows), camera at eye level, neutral expression, mouth closed.">Tageslicht von vorn (z. B. vor einem Fenster stehend), einfarbige helle Wand mit ca. 1 m Abstand dahinter (vermeidet Schatten), Kamera auf Augenhöhe, neutraler Blick, Mund geschlossen.</p></details>
+      <details><summary data-en="Can I use these photos for a German passport?">Kann ich die Bilder für den deutschen Reisepass verwenden?</summary><p data-en="Since May 2025 German passport/ID authorities require digitally transmitted photos from certified providers. For driving licences, many visa applications and documents of other countries, self-created biometric photos are still accepted.">Deutsche Pass- und Ausweisbehörden verlangen seit Mai 2025 digital übermittelte Fotos zertifizierter Anbieter. Für Führerschein, viele Visa-Anträge und Dokumente anderer Länder sind selbst erstellte biometrische Fotos weiterhin zulässig.</p></details>
+      <details><summary data-en="What does printing cost?">Was kostet der Ausdruck?</summary><p data-en="Download the 10×15 cm print sheet and have it printed as a normal photo at a drugstore or photo lab – usually €0.10–0.25. Then cut along the cut marks: several passport photos for a few cents.">Laden Sie den 10×15-Druckbogen herunter und lassen Sie ihn als normales Foto im Drogeriemarkt oder Fotolabor drucken – meist 0,10–0,25 €. Anschließend entlang der Schnittmarken schneiden: 4 Passbilder für wenige Cent.</p></details>
     </div>
   </section>
 
@@ -239,14 +240,14 @@
         <svg viewBox="0 0 100 100" width="18" height="18" aria-hidden="true"><rect width="100" height="100" rx="22" fill="currentColor" opacity="0.15"/><circle cx="50" cy="40" r="15" fill="currentColor"/><path d="M24 86c0-15 12-25 26-25s26 10 26 25" fill="currentColor"/></svg>
         <span>PassBild<b>Pro</b></span>
       </div>
-      <p class="footer-meta">
+      <p class="footer-meta" data-en="Independent passport photo generator – implemented per ICAO 9303 and the German BMI photo template. Not an official service, without warranty – the requirements of the relevant authority prevail.">
         Unabhängiger Passbild-Generator – umgesetzt nach ICAO&nbsp;9303 und der Foto-Mustertafel des BMI.
         Kein amtliches Angebot, ohne Gewähr – maßgeblich sind die Vorgaben der zuständigen Behörde.
       </p>
       <div class="footer-tags">
-        <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Keine Foto-Uploads</span>
-        <span>Keine Cookies</span>
-        <span>Kein Tracking</span>
+        <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span data-en="No photo uploads">Keine Foto-Uploads</span></span>
+        <span data-en="No cookies">Keine Cookies</span>
+        <span data-en="No tracking">Kein Tracking</span>
       </div>
     </div>
   </footer>
@@ -254,21 +255,43 @@
   <!-- Camera modal -->
   <div class="modal" id="camera-modal" hidden>
     <div class="modal-box">
-      <h3>Foto aufnehmen</h3>
+      <h3 data-en="Take a photo">Foto aufnehmen</h3>
       <div class="camera-wrap">
         <video id="camera-video" autoplay playsinline muted></video>
         <div class="camera-guide" aria-hidden="true"></div>
       </div>
-      <p class="panel-hint">Kamera auf Augenhöhe, Gesicht in den Rahmen, neutraler Blick.</p>
+      <p class="panel-hint" data-en="Camera at eye level, face inside the frame, neutral expression.">Kamera auf Augenhöhe, Gesicht in den Rahmen, neutraler Blick.</p>
       <div class="modal-actions">
-        <button class="btn btn-secondary" id="btn-camera-cancel" type="button">Abbrechen</button>
-        <button class="btn btn-primary" id="btn-camera-shoot" type="button">Aufnehmen</button>
+        <button class="btn btn-secondary" id="btn-camera-cancel" type="button" data-en="Cancel">Abbrechen</button>
+        <button class="btn btn-primary" id="btn-camera-shoot" type="button" data-en="Capture">Aufnehmen</button>
       </div>
+    </div>
+  </div>
+
+  <!-- Paywall -->
+  <div class="modal" id="paywall-modal" hidden>
+    <div class="modal-box pay-box">
+      <div class="pay-head">
+        <div class="pay-badge" data-en="HD without watermark">HD ohne Wasserzeichen</div>
+        <h3 data-en="Unlock your finished photo">Fertiges Passbild freischalten</h3>
+        <p class="pay-lead" data-en="Your preview is checked and ready. Unlock the download in full print quality (600 dpi, no watermark) – one-time, no subscription.">Deine Vorschau ist geprüft und fertig. Schalte den Download in voller Druckqualität (600&nbsp;dpi, ohne Wasserzeichen) frei – einmalig, kein Abo.</p>
+      </div>
+      <ul class="pay-list">
+        <li data-en-html="Single photo <strong>and</strong> print sheet (multiple photos) included">Einzelbild <strong>und</strong> Druckbogen (mehrere Bilder) enthalten</li>
+        <li data-en="600 dpi, exactly to size – to upload or print">600 dpi, exakt maßhaltig – zum Hochladen oder Ausdrucken</li>
+        <li data-en="All country formats · instant download">Alle Länderformate · sofort per Download</li>
+      </ul>
+      <button class="btn btn-primary btn-block pay-buy" id="pay-buy" type="button">
+        <span data-en="Unlock HD –">HD freischalten –</span> <span id="pay-price">2,99 €</span>
+      </button>
+      <button class="btn btn-ghost btn-block" id="pay-preview" type="button" data-en="Load free watermarked preview first">Zuerst Gratis-Vorschau mit Wasserzeichen laden</button>
+      <p class="pay-demo-note" id="pay-demo-note" hidden data-en="Demo mode active – no Stripe payment link is configured yet, so it unlocks without a real payment.">Demo-Modus aktiv – es ist noch kein Stripe-Zahlungslink hinterlegt, daher wird ohne echte Zahlung freigeschaltet.</p>
+      <button class="pay-close" id="pay-cancel" type="button" aria-label="Close" data-en="Cancel">Abbrechen</button>
     </div>
   </div>
 
   <div class="toast" id="toast" hidden></div>
 
-  <script type="module" src="js/app.js?v=4"></script>
+  <script type="module" src="js/app.js?v=6"></script>
 </body>
 </html>
