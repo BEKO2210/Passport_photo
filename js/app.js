@@ -17,41 +17,128 @@ const CROWN_FACTOR = 0.20;
 /* ---------------- Formate (amtliche Vorgaben) ---------------- */
 const FORMATS = {
   de_pass: {
-    label: "Deutschland / EU – Reisepass & Personalausweis (35 × 45 mm)",
+    label: { de: "Deutschland / EU – Reisepass & Personalausweis (35 × 45 mm)", en: "Germany / EU – Passport & ID card (35 × 45 mm)" },
     wmm: 35, hmm: 45, dpi: 600,
     faceMin: 0.70, faceMax: 0.80, faceTarget: 0.755,
     eyeMin: 0.50, eyeMax: 0.66,
-    hint: "Kopfhöhe (Kinn bis Scheitel) 32–36 mm = 70–80 % der Bildhöhe. Hintergrund einfarbig hell, ideal hellgrau.",
+    hint: { de: "Kopfhöhe (Kinn bis Scheitel) 32–36 mm = 70–80 % der Bildhöhe. Hintergrund einfarbig hell, ideal hellgrau.", en: "Head height (chin to crown) 32–36 mm = 70–80% of image height. Plain light background, ideally light grey." },
   },
   de_fs: {
-    label: "Deutschland – Führerschein (35 × 45 mm)",
+    label: { de: "Deutschland – Führerschein (35 × 45 mm)", en: "Germany – Driving licence (35 × 45 mm)" },
     wmm: 35, hmm: 45, dpi: 600,
     faceMin: 0.70, faceMax: 0.80, faceTarget: 0.755,
     eyeMin: 0.50, eyeMax: 0.66,
-    hint: "Gleiche biometrische Vorgaben wie beim Reisepass (35 × 45 mm).",
+    hint: { de: "Gleiche biometrische Vorgaben wie beim Reisepass (35 × 45 mm).", en: "Same biometric requirements as the passport (35 × 45 mm)." },
   },
   schengen: {
-    label: "Schengen-Visum (35 × 45 mm)",
+    label: { de: "Schengen-Visum (35 × 45 mm)", en: "Schengen visa (35 × 45 mm)" },
     wmm: 35, hmm: 45, dpi: 600,
     faceMin: 0.70, faceMax: 0.80, faceTarget: 0.755,
     eyeMin: 0.50, eyeMax: 0.66,
-    hint: "ICAO-konform, 35 × 45 mm, heller Hintergrund. Von allen Schengen-Staaten akzeptiert.",
+    hint: { de: "ICAO-konform, 35 × 45 mm, heller Hintergrund. Von allen Schengen-Staaten akzeptiert.", en: "ICAO-compliant, 35 × 45 mm, light background. Accepted by all Schengen states." },
   },
   us: {
-    label: "USA – Passport / Visa / ESTA (2 × 2 in, 51 × 51 mm)",
+    label: { de: "USA – Passport / Visa / ESTA (2 × 2 in, 51 × 51 mm)", en: "USA – Passport / Visa / ESTA (2 × 2 in, 51 × 51 mm)" },
     wmm: 50.8, hmm: 50.8, dpi: 600,
     faceMin: 0.50, faceMax: 0.69, faceTarget: 0.60,
     eyeMin: 0.56, eyeMax: 0.69,
-    hint: "Quadratisch 2 × 2 Zoll, Kopfhöhe 1–1⅜ in (50–69 %), Hintergrund weiß. Digital: 600–1200 px Kantenlänge.",
+    hint: { de: "Quadratisch 2 × 2 Zoll, Kopfhöhe 1–1⅜ in (50–69 %), Hintergrund weiß. Digital: 600–1200 px Kantenlänge.", en: "Square 2 × 2 in, head height 1–1⅜ in (50–69%), white background. Digital: 600–1200 px per side." },
   },
   uk: {
-    label: "Großbritannien – Passport (35 × 45 mm)",
+    label: { de: "Großbritannien – Passport (35 × 45 mm)", en: "United Kingdom – Passport (35 × 45 mm)" },
     wmm: 35, hmm: 45, dpi: 600,
     faceMin: 0.64, faceMax: 0.76, faceTarget: 0.70,
     eyeMin: 0.52, eyeMax: 0.70,
-    hint: "Kopfhöhe (Kinn bis Scheitel) 29–34 mm, heller grauer oder cremefarbener Hintergrund.",
+    hint: { de: "Kopfhöhe (Kinn bis Scheitel) 29–34 mm, heller grauer oder cremefarbener Hintergrund.", en: "Head height (chin to crown) 29–34 mm, light grey or cream background." },
+  },
+  ca: {
+    label: { de: "Kanada – Passport (50 × 70 mm)", en: "Canada – Passport (50 × 70 mm)" },
+    wmm: 50, hmm: 70, dpi: 600,
+    faceMin: 0.44, faceMax: 0.52, faceTarget: 0.48,
+    eyeMin: 0.55, eyeMax: 0.70,
+    hint: { de: "Format 50 × 70 mm, Kopfhöhe (Kinn bis Scheitel) 31–36 mm, weißer oder heller Hintergrund.", en: "Size 50 × 70 mm, head height (chin to crown) 31–36 mm, white or light background." },
+  },
+  au: {
+    label: { de: "Australien – Passport / Visa (35 × 45 mm)", en: "Australia – Passport / Visa (35 × 45 mm)" },
+    wmm: 35, hmm: 45, dpi: 600,
+    faceMin: 0.70, faceMax: 0.80, faceTarget: 0.755,
+    eyeMin: 0.50, eyeMax: 0.66,
+    hint: { de: "35 × 45 mm, Kopfhöhe 32–36 mm, hell einfarbiger Hintergrund. ICAO-konform.", en: "35 × 45 mm, head height 32–36 mm, plain light background. ICAO-compliant." },
+  },
+  in_visa: {
+    label: { de: "Indien – Visum / OCI (2 × 2 in, 51 × 51 mm)", en: "India – Visa / OCI (2 × 2 in, 51 × 51 mm)" },
+    wmm: 50.8, hmm: 50.8, dpi: 600,
+    faceMin: 0.60, faceMax: 0.75, faceTarget: 0.68,
+    eyeMin: 0.55, eyeMax: 0.70,
+    hint: { de: "Quadratisch 2 × 2 Zoll, Gesicht zentriert und groß im Bild, weißer Hintergrund.", en: "Square 2 × 2 in, face centred and large in frame, white background." },
+  },
+  cn_visa: {
+    label: { de: "China – Visum (33 × 48 mm)", en: "China – Visa (33 × 48 mm)" },
+    wmm: 33, hmm: 48, dpi: 600,
+    faceMin: 0.58, faceMax: 0.69, faceTarget: 0.64,
+    eyeMin: 0.55, eyeMax: 0.70,
+    hint: { de: "Format 33 × 48 mm, Kopfhöhe 28–33 mm, rein weißer Hintergrund, keine Brille empfohlen.", en: "Size 33 × 48 mm, head height 28–33 mm, pure white background, glasses not recommended." },
   },
 };
+
+/* ============================================================
+   BEZAHLUNG (Stripe) – hier eintragen und fertig.
+   1. Stripe-Konto anlegen (stripe.com), Produkt "HD-Passbild" erstellen.
+   2. Einen "Payment Link" erzeugen und unten bei paymentLink einfügen.
+   3. Im Payment Link als Erfolgs-URL die eigene Domain mit ?paid=1 setzen,
+      z. B. https://passport-photo-five.vercel.app/?paid=1
+   Solange paymentLink leer ist, läuft ein DEMO-MODUS (schaltet ohne Zahlung frei).
+   ============================================================ */
+const PAYMENTS = {
+  paymentLink: "",          // <-- Stripe Payment Link hier einfügen
+  priceLabel: "2,99 €",     // nur Anzeige – der echte Preis steht im Stripe-Link
+};
+
+/* Freischalt-Status: nach Zahlung dauerhaft im Browser gemerkt */
+let paidUnlocked = false;
+try { paidUnlocked = localStorage.getItem("pbp_hd_unlocked") === "1"; } catch (e) {}
+function isUnlocked() { return paidUnlocked; }
+function setUnlocked(v) {
+  paidUnlocked = !!v;
+  try { localStorage.setItem("pbp_hd_unlocked", v ? "1" : "0"); } catch (e) {}
+  document.body.classList.toggle("is-unlocked", paidUnlocked);
+}
+
+/* ============================================================
+   Sprache (DE / EN) – Übersetzungen stehen direkt im HTML (data-en /
+   data-en-html), dynamische JS-Texte über L("de", "en").
+   ============================================================ */
+function detectLang() {
+  try { const s = localStorage.getItem("pbp_lang"); if (s === "de" || s === "en") return s; } catch (e) {}
+  return (navigator.language || "de").toLowerCase().startsWith("de") ? "de" : "en";
+}
+let LANG = detectLang();
+function L(de, en) { return LANG === "en" ? en : de; }
+
+function applyLang() {
+  document.documentElement.lang = LANG;
+  document.querySelectorAll("[data-en], [data-en-html]").forEach((el) => {
+    if (el._origHTML === undefined) el._origHTML = el.innerHTML;
+    if (LANG === "en") {
+      if (el.dataset.enHtml !== undefined) el.innerHTML = el.dataset.enHtml;
+      else if (el.dataset.en !== undefined) el.textContent = el.dataset.en;
+    } else {
+      el.innerHTML = el._origHTML;
+    }
+  });
+  const tb = $("lang-toggle");
+  if (tb) { tb.textContent = LANG === "de" ? "EN" : "DE"; tb.setAttribute("aria-label", LANG === "de" ? "Switch to English" : "Auf Deutsch umstellen"); }
+  document.title = L("PassBild Pro – Biometrische Passfotos online erstellen", "PassBild Pro – Create biometric passport photos online");
+  const ov = $("btn-overlay");
+  if (ov) ov.textContent = L("Schablone: ", "Guide: ") + (state.overlayOn ? L("an", "on") : L("aus", "off"));
+  if (typeof buildFormatOptions === "function") buildFormatOptions();
+  if (typeof applyFormat === "function") applyFormat();
+}
+function setLang(l) {
+  LANG = l;
+  try { localStorage.setItem("pbp_lang", l); } catch (e) {}
+  applyLang();
+}
 
 /* ---------------- State ---------------- */
 const state = {
@@ -105,7 +192,7 @@ function setLoading(on, text) {
    ============================================================ */
 async function ensureDetector() {
   if (state.detector) return state.detector;
-  setLoading(true, "KI-Modell wird geladen … (nur beim ersten Mal)");
+  setLoading(true, L("KI-Modell wird geladen … (nur beim ersten Mal)", "Loading AI model … (first time only)"));
   const vision = await import(VISION_BUNDLE_URL);
   const fileset = await vision.FilesetResolver.forVisionTasks(WASM_URL);
   state.detector = await vision.FaceLandmarker.createFromOptions(fileset, {
@@ -338,9 +425,9 @@ function runChecks() {
 
   // 1. Gesicht erkannt
   checks.push({
-    label: "Gesicht erkannt",
+    label: L("Gesicht erkannt", "Face detected"),
     state: face ? P : F,
-    detail: face ? "Automatische Vermessung aktiv." : "Kein Gesicht gefunden – bitte anderes Foto verwenden.",
+    detail: face ? L("Automatische Vermessung aktiv.", "Automatic measurement active.") : L("Kein Gesicht gefunden – bitte anderes Foto verwenden.", "No face found – please use a different photo."),
   });
 
   if (face) {
@@ -349,34 +436,34 @@ function runChecks() {
     const inRange = pct >= f.faceMin && pct <= f.faceMax;
     const near = pct >= f.faceMin - 0.02 && pct <= f.faceMax + 0.02;
     checks.push({
-      label: `Kopfhöhe ${Math.round(pct * 100)} %`,
+      label: L(`Kopfhöhe ${Math.round(pct * 100)} %`, `Head height ${Math.round(pct * 100)}%`),
       state: inRange ? P : near ? W_ : F,
-      detail: `Zulässig: ${Math.round(f.faceMin * 100)}–${Math.round(f.faceMax * 100)} % (Kinn bis Scheitel). Mit dem Zoom-Regler anpassen.`,
+      detail: L(`Zulässig: ${Math.round(f.faceMin * 100)}–${Math.round(f.faceMax * 100)} % (Kinn bis Scheitel). Mit dem Zoom-Regler anpassen.`, `Allowed: ${Math.round(f.faceMin * 100)}–${Math.round(f.faceMax * 100)}% (chin to crown). Adjust with the zoom slider.`),
     });
 
     // 3. Augenhöhe
     const eyeFromBottom = 1 - (face.eyeMid.y - state.crop.y) / h;
     const eyeOk = eyeFromBottom >= f.eyeMin && eyeFromBottom <= f.eyeMax;
     checks.push({
-      label: "Augenlinie in der Zone",
+      label: L("Augenlinie in der Zone", "Eye line in the zone"),
       state: eyeOk ? P : W_,
-      detail: eyeOk ? "Augen liegen im zulässigen Bereich (grünes Band)." : "Bild vertikal verschieben, bis die Augen im grünen Band liegen.",
+      detail: eyeOk ? L("Augen liegen im zulässigen Bereich (grünes Band).", "Eyes are within the allowed band (green).") : L("Bild vertikal verschieben, bis die Augen im grünen Band liegen.", "Move the image vertically until the eyes sit in the green band."),
     });
 
     // 4. Zentrierung
     const dx = Math.abs(face.eyeMid.x - (state.crop.x + w / 2)) / w;
     checks.push({
-      label: "Horizontal zentriert",
+      label: L("Horizontal zentriert", "Horizontally centred"),
       state: dx <= 0.04 ? P : dx <= 0.08 ? W_ : F,
-      detail: dx <= 0.04 ? "Gesicht liegt mittig." : "Bild seitlich verschieben, bis das Gesicht auf der Mittelachse liegt.",
+      detail: dx <= 0.04 ? L("Gesicht liegt mittig.", "Face is centred.") : L("Bild seitlich verschieben, bis das Gesicht auf der Mittelachse liegt.", "Move the image sideways until the face is on the centre line."),
     });
 
     // 5. Kopfneigung
     const a = Math.abs(face.angleDeg);
     checks.push({
-      label: `Kopf gerade (${a.toFixed(1)}°)`,
+      label: L(`Kopf gerade (${a.toFixed(1)}°)`, `Head level (${a.toFixed(1)}°)`),
       state: a <= 3 ? P : a <= 5 ? W_ : F,
-      detail: a <= 3 ? "Augenlinie ist waagerecht." : "Mit dem Drehungs-Regler begradigen.",
+      detail: a <= 3 ? L("Augenlinie ist waagerecht.", "Eye line is horizontal.") : L("Mit dem Drehungs-Regler begradigen.", "Straighten with the rotation slider."),
     });
   }
 
@@ -384,14 +471,14 @@ function runChecks() {
   const need600 = exportPx().w;
   const need300 = need600 / 2;
   checks.push({
-    label: "Auflösung / Druckqualität",
+    label: L("Auflösung / Druckqualität", "Resolution / print quality"),
     state: w >= need600 ? P : w >= need300 ? W_ : F,
     detail:
       w >= need600
-        ? `Ausschnitt ${Math.round(w)} px breit – ausgezeichnet für ${f.dpi} dpi.`
+        ? L(`Ausschnitt ${Math.round(w)} px breit – ausgezeichnet für ${f.dpi} dpi.`, `Crop ${Math.round(w)} px wide – excellent for ${f.dpi} dpi.`)
         : w >= need300
-        ? `Ausschnitt ${Math.round(w)} px – für 300 dpi ausreichend, näher aufgenommenes Foto wäre besser.`
-        : `Ausschnitt nur ${Math.round(w)} px breit – Foto mit höherer Auflösung verwenden.`,
+        ? L(`Ausschnitt ${Math.round(w)} px – für 300 dpi ausreichend, näher aufgenommenes Foto wäre besser.`, `Crop ${Math.round(w)} px – enough for 300 dpi, a closer photo would be better.`)
+        : L(`Ausschnitt nur ${Math.round(w)} px breit – Foto mit höherer Auflösung verwenden.`, `Crop only ${Math.round(w)} px wide – use a higher-resolution photo.`),
   });
 
   // 7 & 8. Belichtung + Hintergrund (Pixel-Analyse)
@@ -400,9 +487,9 @@ function runChecks() {
     const fw = img.w, fh = img.h;
     const faceLuma = meanLuma(img, Math.round(fw * 0.35), Math.round(fh * 0.3), Math.round(fw * 0.65), Math.round(fh * 0.6));
     checks.push({
-      label: "Belichtung des Gesichts",
+      label: L("Belichtung des Gesichts", "Face exposure"),
       state: faceLuma >= 70 && faceLuma <= 220 ? P : W_,
-      detail: faceLuma < 70 ? "Gesicht wirkt zu dunkel – helleres Foto verwenden." : faceLuma > 220 ? "Gesicht wirkt überbelichtet." : "Helligkeit im guten Bereich.",
+      detail: faceLuma < 70 ? L("Gesicht wirkt zu dunkel – helleres Foto verwenden.", "Face looks too dark – use a brighter photo.") : faceLuma > 220 ? L("Gesicht wirkt überbelichtet.", "Face looks overexposed.") : L("Helligkeit im guten Bereich.", "Brightness is in a good range."),
     });
 
     const tl = meanLuma(img, 0, 0, Math.round(fw * 0.14), Math.round(fh * 0.12));
@@ -410,14 +497,14 @@ function runChecks() {
     const bgLuma = (tl + tr) / 2;
     const uniform = Math.abs(tl - tr) < 34;
     checks.push({
-      label: "Hintergrund hell & gleichmäßig",
+      label: L("Hintergrund hell & gleichmäßig", "Background light & even"),
       state: bgLuma >= 150 && uniform ? P : bgLuma >= 115 ? W_ : F,
       detail:
         bgLuma < 115
-          ? "Hintergrund zu dunkel – KI-Hintergrund (hellgrau) verwenden."
+          ? L("Hintergrund zu dunkel – KI-Hintergrund (hellgrau) verwenden.", "Background too dark – use the AI background (light grey).")
           : !uniform
-          ? "Hintergrund ungleichmäßig (Schatten?) – KI-Hintergrund empfohlen."
-          : "Einfarbig heller Hintergrund erkannt.",
+          ? L("Hintergrund ungleichmäßig (Schatten?) – KI-Hintergrund empfohlen.", "Uneven background (shadows?) – AI background recommended.")
+          : L("Einfarbig heller Hintergrund erkannt.", "Plain light background detected."),
     });
   } catch (e) { /* Sampling optional */ }
 
@@ -444,7 +531,7 @@ function renderChecks(checks) {
   const warning = $("export-warning");
   if (fail > 0) {
     warning.hidden = false;
-    warning.textContent = "Hinweis: Es gibt noch rot markierte Kriterien – das Foto wird so voraussichtlich nicht akzeptiert. Bitte oben nachjustieren.";
+    warning.textContent = L("Hinweis: Es gibt noch rot markierte Kriterien – das Foto wird so voraussichtlich nicht akzeptiert. Bitte oben nachjustieren.", "Note: some criteria are still marked red – the photo is unlikely to be accepted as is. Please adjust above.");
   } else {
     warning.hidden = true;
   }
@@ -468,10 +555,10 @@ function update({ recheck = true } = {}) {
    ============================================================ */
 async function loadImage(blob) {
   try {
-    setLoading(true, "Bild wird analysiert …");
+    setLoading(true, L("Bild wird analysiert …", "Analysing image …"));
     const bitmap = await createImageBitmap(blob, { imageOrientation: "from-image" });
     if (bitmap.width < 300 || bitmap.height < 300) {
-      toast("Das Bild ist sehr klein – bitte ein Foto mit höherer Auflösung verwenden.");
+      toast(L("Das Bild ist sehr klein – bitte ein Foto mit höherer Auflösung verwenden.", "This image is very small – please use a higher-resolution photo."));
     }
     state.srcBitmap = bitmap;
     state.cutoutBitmap = null;
@@ -482,7 +569,7 @@ async function loadImage(blob) {
     $("rotate-value").textContent = "0°";
 
     await ensureDetector();
-    setLoading(true, "Gesicht wird vermessen …");
+    setLoading(true, L("Gesicht wird vermessen …", "Measuring face …"));
     bake();
 
     // Automatisch begradigen, wenn der Kopf leicht geneigt ist
@@ -494,7 +581,7 @@ async function loadImage(blob) {
     }
 
     if (!state.face) {
-      toast("Kein Gesicht erkannt. Sie können den Ausschnitt manuell setzen – oder ein frontales Portraitfoto verwenden.");
+      toast(L("Kein Gesicht erkannt. Sie können den Ausschnitt manuell setzen – oder ein frontales Portraitfoto verwenden.", "No face detected. You can position the crop manually – or use a front-facing portrait photo."));
     }
 
     autoCrop();
@@ -507,7 +594,7 @@ async function loadImage(blob) {
   } catch (e) {
     console.error(e);
     setLoading(false);
-    toast("Dieses Bild konnte nicht geladen werden. Bitte JPG, PNG oder WEBP verwenden (HEIC wird nicht von allen Browsern unterstützt).");
+    toast(L("Dieses Bild konnte nicht geladen werden. Bitte JPG, PNG oder WEBP verwenden (HEIC wird nicht von allen Browsern unterstützt).", "This image could not be loaded. Please use JPG, PNG or WEBP (HEIC is not supported by all browsers)."));
   }
 }
 
@@ -528,7 +615,7 @@ fileInput.addEventListener("change", () => { if (fileInput.files[0]) loadImage(f
 dropzone.addEventListener("drop", (e) => {
   const file = e.dataTransfer.files?.[0];
   if (file && file.type.startsWith("image/")) loadImage(file);
-  else toast("Bitte eine Bilddatei ablegen (JPG, PNG, WEBP).");
+  else toast(L("Bitte eine Bilddatei ablegen (JPG, PNG, WEBP).", "Please drop an image file (JPG, PNG, WEBP)."));
 });
 
 /* Kamera */
@@ -543,7 +630,7 @@ $("btn-camera").addEventListener("click", async (e) => {
     $("camera-video").srcObject = cameraStream;
     $("camera-modal").hidden = false;
   } catch {
-    toast("Kamera konnte nicht geöffnet werden – bitte Berechtigung erteilen oder ein Foto hochladen.");
+    toast(L("Kamera konnte nicht geöffnet werden – bitte Berechtigung erteilen oder ein Foto hochladen.", "Could not open the camera – please grant permission or upload a photo."));
   }
 });
 function closeCamera() {
@@ -642,7 +729,7 @@ $("btn-new").addEventListener("click", () => {
 });
 $("btn-overlay").addEventListener("click", (e) => {
   state.overlayOn = !state.overlayOn;
-  e.target.textContent = `Schablone: ${state.overlayOn ? "an" : "aus"}`;
+  e.target.textContent = L("Schablone: ", "Guide: ") + (state.overlayOn ? L("an", "on") : L("aus", "off"));
   e.target.setAttribute("aria-pressed", state.overlayOn);
   render();
 });
@@ -651,18 +738,24 @@ $("btn-overlay").addEventListener("click", (e) => {
    Format
    ============================================================ */
 const sel = $("format-select");
-for (const [key, f] of Object.entries(FORMATS)) {
-  const o = document.createElement("option");
-  o.value = key; o.textContent = f.label;
-  sel.appendChild(o);
+function buildFormatOptions() {
+  const cur = sel.value || state.formatKey;
+  sel.innerHTML = "";
+  for (const [key, f] of Object.entries(FORMATS)) {
+    const o = document.createElement("option");
+    o.value = key; o.textContent = f.label[LANG] || f.label.de;
+    sel.appendChild(o);
+  }
+  sel.value = cur;
 }
+buildFormatOptions();
 sel.addEventListener("change", () => {
   state.formatKey = sel.value;
   applyFormat();
 });
 function applyFormat() {
   const f = fmt();
-  $("format-hint").textContent = f.hint;
+  $("format-hint").textContent = f.hint[LANG] || f.hint.de;
   // Canvas-Seitenverhältnis anpassen
   const W = 700;
   previewCanvas.width = W;
@@ -698,7 +791,7 @@ document.querySelectorAll(".bg-chip").forEach((btn) => {
         state.cutoutBitmap = await createImageBitmap(cutBlob);
       } catch (e) {
         console.error(e);
-        toast("KI-Hintergrundentfernung fehlgeschlagen (Netzwerk/Browser). Das Original bleibt erhalten.");
+        toast(L("KI-Hintergrundentfernung fehlgeschlagen (Netzwerk/Browser). Das Original bleibt erhalten.", "AI background removal failed (network/browser). The original is kept."));
         state.bgBusy = false;
         $("bg-progress").hidden = true;
         return;
@@ -717,7 +810,7 @@ document.querySelectorAll(".bg-chip").forEach((btn) => {
 /* ============================================================
    Export
    ============================================================ */
-function renderCrop(wpx, hpx) {
+function renderCrop(wpx, hpx, watermark = false) {
   const out = document.createElement("canvas");
   out.width = wpx; out.height = hpx;
   const ox = out.getContext("2d");
@@ -726,7 +819,25 @@ function renderCrop(wpx, hpx) {
   ox.fillRect(0, 0, wpx, hpx);
   const { x, y, w, h } = state.crop;
   ox.drawImage(state.baked, x, y, w, h, 0, 0, wpx, hpx);
+  if (watermark) stampWatermark(ox, wpx, hpx);
   return out;
+}
+
+/** Diagonales „MUSTER · SPECIMEN"-Wasserzeichen für die Gratis-Vorschau. */
+function stampWatermark(cx, w, h) {
+  cx.save();
+  cx.translate(w / 2, h / 2);
+  cx.rotate(-Math.atan2(h, w));
+  const step = Math.max(w, h) * 0.16;
+  cx.font = `700 ${Math.round(w * 0.075)}px system-ui, sans-serif`;
+  cx.textAlign = "center";
+  cx.textBaseline = "middle";
+  const diag = Math.hypot(w, h);
+  for (let y = -diag; y < diag; y += step) {
+    cx.fillStyle = "rgba(20,28,45,0.16)";
+    cx.fillText("MUSTER · SPECIMEN · MUSTER", 0, y);
+  }
+  cx.restore();
 }
 
 /** Setzt die dpi-Angabe im JFIF-Header eines JPEG-Blobs. */
@@ -750,16 +861,21 @@ function downloadBlob(blob, name) {
   setTimeout(() => URL.revokeObjectURL(a.href), 4000);
 }
 
-$("btn-download-single").addEventListener("click", async () => {
-  if (!state.baked) return;
+async function doDownloadSingle(watermark) {
   const f = fmt();
   const px = exportPx();
-  const blob = await jpegWithDpi(renderCrop(px.w, px.h), f.dpi);
-  downloadBlob(blob, `passbild-${state.formatKey}-${px.w}x${px.h}-${f.dpi}dpi.jpg`);
-  toast("Passbild wurde heruntergeladen.");
+  const blob = await jpegWithDpi(renderCrop(px.w, px.h, watermark), f.dpi);
+  downloadBlob(blob, `passbild-${state.formatKey}-${px.w}x${px.h}-${f.dpi}dpi${watermark ? "-vorschau" : ""}.jpg`);
+  toast(watermark ? L("Vorschau mit Wasserzeichen heruntergeladen.", "Watermarked preview downloaded.") : L("HD-Passbild wurde heruntergeladen.", "HD passport photo downloaded."));
+}
+
+$("btn-download-single").addEventListener("click", () => {
+  if (!state.baked) return;
+  if (isUnlocked()) doDownloadSingle(false);
+  else openPaywall("single");
 });
 
-function buildSheet() {
+function buildSheet(watermark = false) {
   const f = fmt();
   const dpi = f.dpi;
   // 15 × 10 cm Querformat
@@ -780,7 +896,7 @@ function buildSheet() {
   sx.fillStyle = "#ffffff";
   sx.fillRect(0, 0, sheetW, sheetH);
 
-  const photo = renderCrop(px.w, px.h);
+  const photo = renderCrop(px.w, px.h, watermark);
   sx.strokeStyle = "#b6b6b6";
   sx.lineWidth = Math.max(1, Math.round(dpi / 300));
   for (let r = 0; r < rows; r++) {
@@ -794,13 +910,18 @@ function buildSheet() {
   return { sheet, count: rows * cols };
 }
 
-$("btn-download-sheet").addEventListener("click", async () => {
-  if (!state.baked) return;
+async function doDownloadSheet(watermark) {
   const f = fmt();
-  const { sheet, count } = buildSheet();
+  const { sheet, count } = buildSheet(watermark);
   const blob = await jpegWithDpi(sheet, f.dpi);
-  downloadBlob(blob, `passbild-druckbogen-10x15-${count}stk.jpg`);
-  toast(`Druckbogen mit ${count} Bildern wurde heruntergeladen.`);
+  downloadBlob(blob, `passbild-druckbogen-10x15-${count}stk${watermark ? "-vorschau" : ""}.jpg`);
+  toast(L(`Druckbogen mit ${count} Bildern wurde heruntergeladen.`, `Print sheet with ${count} photos downloaded.`));
+}
+
+$("btn-download-sheet").addEventListener("click", () => {
+  if (!state.baked) return;
+  if (isUnlocked()) doDownloadSheet(false);
+  else openPaywall("sheet");
 });
 
 /* Vorschau-Thumbnails im Export-Bereich */
@@ -814,7 +935,9 @@ function updateExportThumbs() {
     const { sheet, count } = buildSheetPreview();
     $("export-thumb-sheet").style.backgroundImage = `url(${sheet})`;
     const desc = document.querySelector("#export-thumb-sheet + h3 + p");
-    if (desc) desc.textContent = `${count} Passbilder mit Schnittmarken – im Drogeriemarkt oder Fotolabor als normales 10×15-Foto (ca. 0,10–0,25 €) ausdrucken lassen.`;
+    if (desc) desc.textContent = L(
+      `${count} Passbilder mit Schnittmarken – im Drogeriemarkt oder Fotolabor als normales 10×15-Foto (ca. 0,10–0,25 €) ausdrucken lassen.`,
+      `${count} photos with cut marks – print as a standard 4×6 in / 10×15 cm photo at any drugstore or photo lab (approx. €0.10–0.25).`);
   }, 200);
 }
 function buildSheetPreview() {
@@ -826,6 +949,66 @@ function buildSheetPreview() {
 }
 
 /* ============================================================
+   Paywall
+   ============================================================ */
+let pendingDownload = null; // "single" | "sheet"
+
+function openPaywall(which) {
+  pendingDownload = which;
+  $("pay-price").textContent = PAYMENTS.priceLabel;
+  $("pay-demo-note").hidden = !!PAYMENTS.paymentLink;
+  $("paywall-modal").hidden = false;
+}
+function closePaywall() { $("paywall-modal").hidden = true; }
+
+function runPendingDownload(watermark) {
+  if (pendingDownload === "single") doDownloadSingle(watermark);
+  else if (pendingDownload === "sheet") doDownloadSheet(watermark);
+}
+
+$("pay-cancel").addEventListener("click", closePaywall);
+$("paywall-modal").addEventListener("click", (e) => { if (e.target.id === "paywall-modal") closePaywall(); });
+
+$("pay-preview").addEventListener("click", () => {
+  runPendingDownload(true);   // Gratis-Vorschau mit Wasserzeichen
+  closePaywall();
+});
+
+$("pay-buy").addEventListener("click", () => {
+  if (PAYMENTS.paymentLink) {
+    // Zur Stripe-Bezahlseite; nach Zahlung Rückkehr mit ?paid=1
+    try { sessionStorage.setItem("pbp_pending", pendingDownload || ""); } catch (e) {}
+    window.location.href = PAYMENTS.paymentLink;
+  } else {
+    // DEMO-MODUS: ohne echte Zahlung freischalten
+    setUnlocked(true);
+    closePaywall();
+    toast(L("Demo-Modus: HD freigeschaltet (kein Stripe-Link hinterlegt).", "Demo mode: HD unlocked (no Stripe link configured)."));
+    runPendingDownload(false);
+  }
+});
+
+/* Nach Rückkehr von Stripe: ?paid=1 → freischalten und Download auslösen */
+(function handlePaidReturn() {
+  const params = new URLSearchParams(location.search);
+  if (params.get("paid") === "1") {
+    setUnlocked(true);
+    // URL säubern
+    history.replaceState(null, "", location.pathname);
+    let pend = null;
+    try { pend = sessionStorage.getItem("pbp_pending"); } catch (e) {}
+    toast(L("Zahlung erfolgreich – HD ist freigeschaltet. Danke!", "Payment successful – HD is unlocked. Thank you!"));
+  }
+})();
+
+setUnlocked(paidUnlocked); // Body-Klasse initial setzen
+
+/* Sprachumschaltung */
+const langToggle = $("lang-toggle");
+if (langToggle) langToggle.addEventListener("click", () => setLang(LANG === "de" ? "en" : "de"));
+
+/* ============================================================
    Init
    ============================================================ */
 applyFormat();
+applyLang();

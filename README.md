@@ -13,6 +13,20 @@ Foto hochladen → KI richtet es biometrisch aus → Vorgaben werden live geprü
 - **Kamera-Aufnahme** direkt im Browser mit Positionierungshilfe
 - **Export** – Einzelbild als JPG mit eingebetteter 600-dpi-Angabe (827×1063 px bei 35×45 mm) sowie Druckbogen 10×15 cm mit mehreren Bildern und Schnittmarken
 - **Datenschutz** – Fotos verlassen das Gerät nie; keine Cookies, kein Tracking
+- **Zweisprachig (DE/EN)** – automatische Spracherkennung, umschaltbar über den Header
+- **9 Länderformate** – DE/EU, Führerschein, Schengen, USA, UK, Kanada, Australien, Indien-Visum, China-Visum
+- **Bezahlschranke (Stripe)** – Gratis-Vorschau mit Wasserzeichen, HD-Download per einmaligem Festpreis
+
+## Bezahlung einrichten (Stripe)
+
+Der HD-Download ist hinter einer Bezahlschranke. Ohne Konfiguration läuft ein **Demo-Modus** (schaltet ohne Zahlung frei), damit alles sofort testbar ist. Für echtes Kassieren:
+
+1. Kostenloses Konto bei [stripe.com](https://stripe.com) anlegen.
+2. Produkt „HD-Passbild" mit gewünschtem Preis erstellen und einen **Payment Link** erzeugen.
+3. Im Payment Link als Erfolgs-/Weiterleitungs-URL die eigene Domain mit `?paid=1` setzen, z. B. `https://deine-domain.de/?paid=1`.
+4. Den Payment-Link in `js/app.js` bei `PAYMENTS.paymentLink` eintragen und `PAYMENTS.priceLabel` auf den Preis setzen. Cache-Version (`?v=` in `index.html`) erhöhen.
+
+> Hinweis: Da die App aus Datenschutzgründen rein clientseitig rendert, ist die Bezahlschranke „weich" – der HD-Render passiert im Browser. Für die Zielgruppe (Passfoto-Kunden) ist das ausreichend; wer eine serverseitig erzwungene Freischaltung braucht, kann später eine Vercel-Serverless-Funktion mit Stripe-Session-Prüfung ergänzen.
 
 ## Umgesetzte amtliche Vorgaben (Foto-Mustertafel BMI / ICAO 9303)
 
