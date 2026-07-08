@@ -444,7 +444,7 @@ function renderChecks(checks) {
   const warning = $("export-warning");
   if (fail > 0) {
     warning.hidden = false;
-    warning.textContent = "⚠️ Es gibt noch rot markierte Kriterien – das Foto wird so voraussichtlich nicht akzeptiert. Bitte oben nachjustieren.";
+    warning.textContent = "Hinweis: Es gibt noch rot markierte Kriterien – das Foto wird so voraussichtlich nicht akzeptiert. Bitte oben nachjustieren.";
   } else {
     warning.hidden = true;
   }
@@ -756,7 +756,7 @@ $("btn-download-single").addEventListener("click", async () => {
   const px = exportPx();
   const blob = await jpegWithDpi(renderCrop(px.w, px.h), f.dpi);
   downloadBlob(blob, `passbild-${state.formatKey}-${px.w}x${px.h}-${f.dpi}dpi.jpg`);
-  toast("Passbild heruntergeladen ✓");
+  toast("Passbild wurde heruntergeladen.");
 });
 
 function buildSheet() {
@@ -800,7 +800,7 @@ $("btn-download-sheet").addEventListener("click", async () => {
   const { sheet, count } = buildSheet();
   const blob = await jpegWithDpi(sheet, f.dpi);
   downloadBlob(blob, `passbild-druckbogen-10x15-${count}stk.jpg`);
-  toast(`Druckbogen mit ${count} Bildern heruntergeladen ✓`);
+  toast(`Druckbogen mit ${count} Bildern wurde heruntergeladen.`);
 });
 
 /* Vorschau-Thumbnails im Export-Bereich */
