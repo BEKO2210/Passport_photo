@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://passport-photo-five.vercel.app/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://passport-photo-five.vercel.app/us-passport-photo</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://passport-photo-five.vercel.app/uk-passport-photo</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://passport-photo-five.vercel.app/canada-passport-photo</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://passport-photo-five.vercel.app/australia-passport-photo</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://passport-photo-five.vercel.app/schengen-visa-photo</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://passport-photo-five.vercel.app/china-visa-photo</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://passport-photo-five.vercel.app/india-visa-photo</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://passport-photo-five.vercel.app/biometrisches-passbild</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://passport-photo-five.vercel.app/fuehrerschein-foto</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+</urlset>

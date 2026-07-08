@@ -296,6 +296,16 @@ input[type="range"] { width: 100%; accent-color: var(--c-primary); height: 26px;
 .faq-section summary { font-weight: 700; font-size: 15px; cursor: pointer; }
 .faq-section details p { margin-top: 10px; font-size: 14px; color: var(--c-ink-soft); }
 
+/* ============ Länder-Links (SEO) ============ */
+.country-section { padding: 48px 0; background: #fff; border-top: 1px solid var(--c-border); }
+.country-links { display: flex; flex-wrap: wrap; gap: 10px; }
+.country-links a {
+  display: inline-block; font-size: 14px; font-weight: 600; color: var(--c-ink-soft);
+  background: var(--c-bg); border: 1px solid var(--c-border); border-radius: 999px;
+  padding: 9px 16px; text-decoration: none; transition: border-color 0.15s, color 0.15s;
+}
+.country-links a:hover { border-color: var(--c-primary); color: var(--c-primary); }
+
 /* ============ Footer ============ */
 .site-footer {
   border-top: 1px solid var(--c-border);
