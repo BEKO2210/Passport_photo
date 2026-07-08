@@ -264,7 +264,7 @@ input[type="range"] { width: 100%; accent-color: var(--c-primary); height: 26px;
   border-radius: var(--radius-sm); padding: 18px;
 }
 .req-card.req-auto { background: var(--c-primary-light); border-color: #cddcee; }
-.req-card h4 { font-size: 14.5px; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+.req-card h4 { font-size: 14.5px; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; row-gap: 4px; }
 .req-card h4 svg { flex: none; color: var(--c-primary); }
 .req-tag {
   margin-left: auto; font-size: 10px; font-weight: 800; letter-spacing: 0.05em;
@@ -364,4 +364,17 @@ input[type="range"] { width: 100%; accent-color: var(--c-primary); height: 26px;
   .header-nav a { display: none; }
   .upload-card { min-height: 320px; padding: 28px 18px; }
   .section-head h2 { font-size: 22px; }
+
+  .trust-badges { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 20px; }
+  .tbadge { padding: 8px 10px; gap: 8px; align-items: flex-start; }
+  .tbadge svg { width: 17px; height: 17px; margin-top: 1px; }
+  .tbadge .tb-title { font-size: 12px; }
+  .tbadge .tb-sub { font-size: 10.5px; }
+
+  .req-card { padding: 15px; }
+  .req-card h4 { font-size: 14px; }
+
+  .canvas-legend { gap: 12px; flex-wrap: wrap; }
+  .bg-options { gap: 6px; }
+  .bg-chip { padding: 7px 11px; font-size: 12.5px; }
 }
