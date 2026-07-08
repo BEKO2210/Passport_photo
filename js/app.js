@@ -1010,5 +1010,11 @@ if (langToggle) langToggle.addEventListener("click", () => setLang(LANG === "de"
 /* ============================================================
    Init
    ============================================================ */
+/* Format aus URL vorwählen (Deep-Link von SEO-Landingpages, z. B. /?format=us) */
+(function presetFormatFromURL() {
+  const p = new URLSearchParams(location.search).get("format");
+  if (p && FORMATS[p]) { state.formatKey = p; sel.value = p; }
+})();
+
 applyFormat();
 applyLang();
